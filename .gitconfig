@@ -1,0 +1,5 @@
+[user]
+	email = rapirent@gmail.com
+	name = rapirent
+[core]
+	excludesfile = /home/kuoteng/.gitignore_global
