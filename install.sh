@@ -8,7 +8,7 @@ sudo apt update -y
 sudo apt upgrade -y
 
 # install basic software
-sudo apt-get install -y gcc g++ make vim curl wget zsh tmux fonts-font-awesome git tig git-flow
+sudo apt-get install -y gcc g++ make vim curl wget zsh tmux fonts-font-awesome git tig git-flow gpaint
 
 # git
 cp .gitconfig $HOME
