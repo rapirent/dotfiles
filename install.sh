@@ -56,7 +56,7 @@ sudo rm -r -f /tmp/123.deb
 sudo apt --fix-broken install -y
 
 # wallpaper
-cp ./wallpaper.jpg $HOME
+sudo cp ./wallpaper.jpg $HOME
 gsettings set org.gnome.desktop.background picture-uri "file://$HOME/dotfiles/wallpaper.jpg"
 
 # autojump
