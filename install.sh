@@ -25,10 +25,10 @@ cp .zshrc $HOME
 chsh -s /bin/zsh
 git clone https://github.com/powerline/fonts.git /tmp/fonts
 sudo /tmp/fonts/install.sh
-gsettings set org.gnome.desktop.interface monospace-font-name 'Ubuntu Mono derivative Powerline 15'
+gsettings set org.gnome.desktop.interface monospace-font-name 'Ubuntu Mono derivative Powerline 13'
 sudo fc-cache -v -f
 git clone https://github.com/zdharma/history-search-multi-word.git /tmp/history-search-multi-word
-sudo cp /tmp/history-search-multi-word $ZSH/custom/plugins/history-search-multi-word -r
+sudo cp -r /tmp/history-search-multi-word $ZSH/custom/plugins/history-search-multi-word
 
 # vim
 sudo apt-get install -y exuberant-ctags vim-gtk vim-gnome
