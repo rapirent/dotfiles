@@ -10,7 +10,7 @@ sudo apt update -y >> ./log/update.log
 sudo apt upgrade -y >> ./log/update.log
 
 # install basic software
-sudo apt-get install -y gcc g++ make vim curl wget zsh tmux fonts-font-awesome git >> ./log/install.log
+sudo apt-get install -y gcc g++ make vim curl wget zsh tmux fonts-font-awesome git tig git-flow >> ./log/install.log
 
 # git
 cp ./.gitconfig $HOME
@@ -91,16 +91,9 @@ sudo apt-get -y oracle-java8-installer >> ./log/install.log
 
 # spotify
 
-# 1. Add the Spotify repository signing keys to be able to verify downloaded packages
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
-
-# 2. Add the Spotify repository
 echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-
-# 3. Update list of available packages
-sudo apt-get update
-
-# 4. Install Spotify
-sudo apt-get install spotify-client
+sudo apt-get -y update >> ./log/update.log
+sudo apt-get -y install spotify-client >> ./log/install.log
 
 sudo apt -y autoremove
