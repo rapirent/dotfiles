@@ -25,7 +25,7 @@ cp .zshrc $HOME
 chsh -s /bin/zsh
 git clone https://github.com/powerline/fonts.git /tmp/fonts
 sudo /tmp/fonts/install.sh
-gsettings set org.gnome.desktop.interface monospace-font-name 'Ubuntu Mono derivative Powerline 13'
+gsettings set org.gnome.desktop.interface monospace-font-name 'Ubuntu Mono derivative Powerline 15'
 sudo fc-cache -v -f
 git clone https://github.com/zdharma/history-search-multi-word.git /tmp/history-search-multi-word
 sudo cp /tmp/history-search-multi-word $ZSH/custom/plugins/history-search-multi-word -r
