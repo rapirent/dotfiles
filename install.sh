@@ -29,8 +29,7 @@ sudo /tmp/fonts/install.sh
 gsettings set org.gnome.desktop.interface monospace-font-name 'Ubuntu Mono derivative Powerline 13'
 sudo fc-cache -v -f
 git clone https://github.com/zdharma/history-search-multi-word.git /tmp/history-search-multi-word
-sudo mkdir -p $ZSH/custom/plugins/history-search-multi-word/
-sudo cp /tmp/history-search-multi-word/history-search-multi-word.plugin.zsh $ZSH/custom/plugins/history-search-multi-word/history-search-multi-word.plugin.zsh
+sudo cp /tmp/history-search-multi-word $ZSH/custom/plugins/history-search-multi-word -r
 
 # vim
 sudo apt-get install -y exuberant-ctags vim-gtk vim-gnome
