@@ -19,6 +19,9 @@ sudo apt-get -y install python-pip
 sudo apt-get -y install python3-pip
 sudo apt install virtualenv -y
 
+# autojump
+sudo apt-get install autojump -y
+
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 cp .zshrc $HOME
@@ -58,11 +61,6 @@ sudo apt --fix-broken install -y
 # wallpaper
 sudo cp ./wallpaper.jpg $HOME
 gsettings set org.gnome.desktop.background picture-uri "file://$HOME/dotfiles/wallpaper.jpg"
-
-# autojump
-git clone https://github.com/joelthelion/autojump /tmp/autojump
-sudo /tmp/autojump/install.py
-
 
 # vscode
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
