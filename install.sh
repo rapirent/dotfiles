@@ -11,9 +11,8 @@ sudo apt upgrade -y
 sudo apt-get install -y gcc g++ make vim curl wget zsh tmux fonts-font-awesome git tig git-flow
 
 # git
-cp ./.gitconfig $HOME
-cp ./.gitignore_global $HOME
-sudo apt-get install -y git-flow
+cp .gitconfig $HOME
+cp .gitignore_global $HOME
 
 # python
 sudo apt-get -y install python-pip
