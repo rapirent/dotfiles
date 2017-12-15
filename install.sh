@@ -68,11 +68,11 @@ sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo apt update -y
 sudo apt-get install code
-list=("HookyQR.beautify" "abusaidm.html-snippets" "bibhasdn.django-html bibhasdn.django-snippets" "dbaeumer.vscode-eslint" \
-"donjayamanne.githistory" "donjayamanne.python" "eamodio.gitlens ecmel.vscode-html-css" "esbenp.prettier-vscode" \
+list=("HookyQR.beautify" "abusaidm.html-snippets" "bibhasdn.django-html" "bibhasdn.django-snippets" "dbaeumer.vscode-eslint" \
+"donjayamanne.githistory" "donjayamanne.python" "eamodio.gitlens" "ecmel.vscode-html-css" "esbenp.prettier-vscode" \
 "himanoa.Python-autopep8" "michelemelluso.code-beautifier" "ms-vscode.sublime-keybindings" \
-"naumovs.color-highlight" "redhat.java robertohuertasm.vscode-icons" "vncz.vscode-apielements wholroyd.jinja" \
-"xabikos.JavaScriptSnippets" "zhuangtongfa.Material-theme")
+"naumovs.color-highlight" "redhat.java" "robertohuertasm.vscode-icons" "vncz.vscode-apielements" \
+"wholroyd.jinja" "xabikos.JavaScriptSnippets" "zhuangtongfa.Material-theme")
 for i in "${list[@]}"; do
     code --install-extension "$i"
 done
@@ -86,12 +86,5 @@ sudo apt-get -y install smartmontools
 
 # java
 sudo apt-get -y install oracle-java8-installer
-
-# spotify
-
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
-echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt-get -y update
-sudo apt-get -y install spotify-client
 
 sudo apt -y autoremove
