@@ -5,7 +5,6 @@ sudo add-apt-repository ppa:jonathonf/vim -y
 sudo add-apt-repository ppa:numix/ppa -y
 sudo add-apt-repository ppa:webupd8team/java -y
 sudo apt update -y
-sudo apt upgrade -y
 
 # install basic software
 sudo apt-get install -y gcc g++ make vim curl wget zsh tmux fonts-font-awesome git tig git-flow gpaint
@@ -32,6 +31,7 @@ gsettings set org.gnome.desktop.interface monospace-font-name 'Ubuntu Mono deriv
 sudo fc-cache -v -f
 git clone https://github.com/zdharma/history-search-multi-word.git /tmp/history-search-multi-word
 sudo cp -r /tmp/history-search-multi-word $ZSH/custom/plugins/history-search-multi-word
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
 # vim
 sudo apt-get install -y exuberant-ctags vim-gtk vim-gnome
@@ -52,16 +52,6 @@ tar jxvf stardict-langdao-ec-big5-2.4.2.tar.bz2 -C ~/.stardict/dic
 # theme icon
 sudo apt-get install numix-icon-theme-circle -y
 
-# chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/123.deb
-sudo dpkg -i /tmp/123.deb
-sudo rm -r -f /tmp/123.deb
-sudo apt --fix-broken install -y
-
-# wallpaper
-sudo cp ./wallpaper.jpg $HOME
-gsettings set org.gnome.desktop.background picture-uri "file://$HOME/dotfiles/wallpaper.jpg"
-
 # vscode
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
@@ -69,7 +59,7 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode s
 sudo apt update -y
 sudo apt-get install code
 list=("HookyQR.beautify" "abusaidm.html-snippets" "bibhasdn.django-html" "bibhasdn.django-snippets" "dbaeumer.vscode-eslint" \
-"donjayamanne.githistory" "donjayamanne.python" "eamodio.gitlens" "ecmel.vscode-html-css" "esbenp.prettier-vscode" \
+"donjayamanne.githistory" "eamodio.gitlens" "ecmel.vscode-html-css" "esbenp.prettier-vscode" \
 "himanoa.Python-autopep8" "michelemelluso.code-beautifier" "ms-vscode.sublime-keybindings" \
 "naumovs.color-highlight" "redhat.java" "robertohuertasm.vscode-icons" "vncz.vscode-apielements" \
 "wholroyd.jinja" "xabikos.JavaScriptSnippets" "zhuangtongfa.Material-theme")
@@ -83,8 +73,5 @@ cp settings.json ~/.config/Code/User
 
 # S.M.A.R.T
 sudo apt-get -y install smartmontools
-
-# java
-sudo apt-get -y install oracle-java8-installer
 
 sudo apt -y autoremove
