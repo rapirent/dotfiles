@@ -13,6 +13,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=('user' 'dir' 'pyenv' 'rbenv' 'vcs')
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=('status' 'root_indicator'
 'background_jobs' 'history' 'virtualenv'  'time' 'anaconda')
+POWERLEVEL9K_MODE='nerdfont-complete'
 
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"

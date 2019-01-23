@@ -4,8 +4,9 @@ brew doctor
 
 
 # install basic software
-brew install tmux wget tmux zsh
-
+brew install tmux wget tmux zsh vim
+brew tap caskroom/fonts
+brew cask install font-hack-nerd-font
 # git
 cp .gitconfig $HOME
 cp .gitignore_global $HOME
