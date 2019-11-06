@@ -75,3 +75,5 @@ cp settings.json ~/.config/Code/User
 sudo apt-get -y install smartmontools
 
 sudo apt -y autoremove
+
+wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -P ~/.bash/
