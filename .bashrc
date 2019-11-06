@@ -183,6 +183,8 @@ if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
 		elif [[ "${__git_branch}" =~ "+" ]]; then # if there are staged files
 			__git_branch_color="$CYAN"
 			__git_status_symbol="✚"
+		elif [[ -z ${__git_branch} ]]; then
+			__git_status_symbol=""
 		fi
 		parse_git_branch() {
 			git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
