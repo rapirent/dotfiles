@@ -1,94 +1,98 @@
-"==set the plugin
-let vim_plug_just_installed = 0
-let vim_plug_path = expand('~/.vim/autoload/plug.vim')
-if !filereadable(vim_plug_path)
-    echo "Installing Vim-plug..."
-    echo ""
-    silent !mkdir -p ~/.vim/autoload
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    let vim_plug_just_installed = 1
+"set the vim plugin
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" manually load vim-plug the first time
-if vim_plug_just_installed
-    :execute 'source '.fnameescape(vim_plug_path)
+if has('nvim') && empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+    silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
 
-" Make sure you use single quotes
+if has('nvim')
+  Plug 'benekastah/neomake'
+endif
 
-" Indent text object
-Plug 'michaeljsmith/vim-indent-object'
-
-" Indentation based movements
-Plug 'jeetsukumaran/vim-indentwise'
-
-" Ack code search (requires ack installed in the system)
-Plug 'mileszs/ack.vim'
-
-" Paint css colors with the real color
-Plug 'lilydjwg/colorizer'
-
-" Better autocompletion
-Plug 'Shougo/neocomplcache.vim'
-
-" Snippets manager (SnipMate), dependencies, and snippets repo
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/nerdtree'
+Plug 'ervandew/supertab'
+"Plug 'kien/tabman.vim'
 Plug 'honza/vim-snippets'
-Plug 'garbas/vim-snipmate'
-
-" Python and other languages code checker
-Plug 'scrooloose/syntastic'
-
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'junegunn/vim-easy-align'
-
-" Autoclose
-Plug 'Townk/vim-autoclose'
-
-" Airline
+Plug 'vim-scripts/mru.vim'
+Plug 'kshenoy/vim-signature'
+Plug 'lilydjwg/colorizer'
+Plug 'vim-scripts/IndexedSearch'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
-" Group dependencies, vim-snippets depends on ultisnips
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
-" On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-
-Plug 'kien/ctrlp.vim'
-Plug 'plasticboy/vim-markdown'
-
-
-"tagbar
-Plug 'majutsushi/tagbar'
-
-"theme
-"Plug 'romainl/Apprentice'
-Plug 'fugalh/desert.vim'
-"Plug 'tomasr/molokai'
 Plug 'altercation/vim-colors-solarized'
 
-"dictionary
-Plug 'chusiang/vim-sdcv'
-
-" Add plugins to &runtimepath
 call plug#end()
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
 
-if vim_plug_just_installed
-    echo "Installing Bundles, please ignore key map error messages"
-    :PlugInstall
-endif
+
+map <C-p> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
+
+" navigate windows with meta(alt)+arrows
+map <S-Right> <c-w>l
+map <S-Left> <c-w>h
+map <S-Up> <c-w>k
+map <S-Down> <c-w>j
+imap <S-Right> <ESC><c-w>l
+imap <S-Left> <ESC><c-w>h
+imap <S-Up> <ESC><c-w>k
+imap <S-Down> <ESC><c-w>j
+
+map <C-l> :tabn<CR>
+map <C-h> :tabp<CR>
+map <C-e> :tabnew<CR>
+map <S-e> :tabclose<CR>
+"map <S-Right> :tabn<CR>
+"map <S-Left> :tabp<CR>
+
+let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
+
+"auto syntax
+"inoremap ( ()<Esc>i
+"inoremap " ""<Esc>i
+"inoremap ' ''<Esc>i
+"inoremap [ []<Esc>i
+"inoremap { {}<Esc>i
+"inoremap {<CR> {<CR>}<Esc>ko<tab>
+"inoremap {<CR> {<CR>}<Esc>ko
+
+" ruler
+let &colorcolumn="80,".join(range(120,999),",")
+" copy and paste
+"set clipboard+=unnamed  " use the clipboards of vim on win
+set clipboard=unnamedplus
 
 syntax on                   "highlight syntax
 syntax enable               "same as above
 set nu                      "monitor the line number
 set expandtab               "以space取代tab
 set cursorline              "monitor the cursor location
-set bg=dark                 "avoid losing comment syntax
+"set bg=dark                 "avoid losing comment syntax
 set ruler                   "monitor 行,列 目前在文件的位置
 set hlsearch                "highlight the search result設定高亮顯示搜尋結果
 set confirm                 "ask when there is conflit
@@ -100,142 +104,17 @@ set shiftwidth=4
 set tabstop=4
 set smarttab
 set mouse=a                 "let mouse to visual
-filetype indent on          "indent according file format
 
-syntax enable
+let NERDTreeWinPos="right"
+let NERDTreeMapOpenInTab='<ENTER>'
 let g:solarized_termcolors=256
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-endif
+"set background=light
+set background=dark
 colorscheme solarized
 
 
-"auto syntax
-inoremap ( ()<Esc>i
-inoremap " ""<Esc>i
-inoremap ' ''<Esc>i
-inoremap [ []<Esc>i
-inoremap { {}<Esc>i
-"inoremap {<CR> {<CR>}<Esc>ko<tab>
-inoremap {<CR> {<CR>}<Esc>ko
+filetype indent on          "indent according file format
 
-" ruler
-let &colorcolumn="80,".join(range(120,999),",")
-" copy and paste
-"set clipboard+=unnamed  " use the clipboards of vim on win
-set clipboard=unnamedplus
-
-" -------------------
-" toggle tagbar display
-map <F4> :TagbarToggle<CR>
-" autofocus on tagbar open
-let g:tagbar_autofocus = 1
-
-" Syntastic ------------------------------
-
-" show list of errors and warnings on the current file
-nmap <leader>e :Errors<CR>
-" check also when just opened the file
-let g:syntastic_check_on_open = 1
-" don't put icons on the sign column (it hides the vcs status icons of signify)
-let g:syntastic_enable_signs = 1
-" custom icons (enable them if you use a patched font, and enable the previous 
-" setting)
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
-
-" Nerdtree
-map <F3> :NERDTreeToggle<CR>
-" open nerdtree with the current file selected
-nmap <C-t> :NERDTreeFind<CR>
-
-"set pastetoggle
-set pastetoggle=<F2>
-
-"save
-inoremap <C-s> <c-o>:Update<CR><CR>
-
-" save as sudo
-ca w!! w !sudo tee "%"
-
-" Comment this line to enable autocompletion preview window
-" (displays documentation related to the selected completion option)
-" Disabled by default because preview makes the window flicker
-set completeopt-=preview
-
-
-" autocompletion of files and commands behaves like shell
-" (complete only the common part, list the options that match)
-set wildmode=list:longest
-
-
-
-" NeoComplCache ------------------------------
-
-" most of them not documented because I'm not sure how they work
-" (docs aren't good, had to do a lot of trial and error to make
-" it play nice)
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_ignore_case = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_auto_select = 1
-let g:neocomplcache_enable_fuzzy_completion = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_fuzzy_completion_start_length = 1
-let g:neocomplcache_auto_completion_start_length = 1
-let g:neocomplcache_manual_completion_start_length = 1
-let g:neocomplcache_min_keyword_length = 1
-let g:neocomplcache_min_syntax_length = 1
-" complete with workds from any opened file
-let g:neocomplcache_same_filetype_lists = {}
-let g:neocomplcache_same_filetype_lists._ = '_'
-
-" Plugin key-mappings.
-
-" close the completion
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-" ignore the completion 
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
-
-
-" Autoclose ------------------------------
-
-" Fix to let ESC work as espected with Autoclose plugin
-let g:AutoClosePumvisible = {"ENTER": "\<C-Y>", "ESC": "\<ESC>"}
-
-
-" Airline ------------------------------
-
-" set status line
-set laststatus=2
-" enable powerline-fonts
-let g:airline_powerline_fonts = 1
-" enable tabline
-let g:airline#extensions#tabline#enabled = 1
-" set left separator
-let g:airline#extensions#tabline#left_sep = ' '
-" set left separator which are not editting
-let g:airline#extensions#tabline#left_alt_sep = '|'
-" show buffer number
-let g:airline#extensions#tabline#buffer_nr_show = 1
-
-
-" set number toggle
-
-nmap <leader>n :set nu!<CR>
-" nmap <C-z> :u<CR>
-
-" navigate windows with meta(alt)+arrows
-map <M-Right> <c-w>l
-map <M-Left> <c-w>h
-map <M-Up> <c-w>k
-map <M-Down> <c-w>j
-imap <M-Right> <ESC><c-w>l
-imap <M-Left> <ESC><c-w>h
-imap <M-Up> <ESC><c-w>k
-imap <M-Down> <ESC><c-w>j
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
