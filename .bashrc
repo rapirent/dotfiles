@@ -145,7 +145,7 @@ if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
 	CYAN="\[\033[0;36m\]"
 	GREEN="\[\033[00;32m\]"
 	RED="\[\033[0;31m\]"
-	VIOLET='\[\033[01;35m\]'
+	VIOLET="\[\033[01;35m\]"
 
 	#local __cur_location="$BLUE\W"           # capital 'W': current directory, small 'w': full file path
 	function __prompt_command() {
@@ -154,17 +154,17 @@ if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
 
 		# Errorcode (conditional)
 		if [ ${ERRORCODE} != 0 ]; then
-			PS1+="\e[90m    $(echo -e '\u2570\u2500\u2770')\e[1;31m$ERRORCODE\e[90m$(echo -e '\u2771')\e[0m\n"
+			PS1+="\e[90m$VIOLET    $(echo -e '\u2570\u2500\u2770')\e[1;31m$ERRORCODE\e[90m$VIOLET$(echo -e '\u2771')\e[0m\n"
 		fi
 
 		# Main line
-		local c="$(echo -e '\u256d\u2500')"
+		local c="$VIOLET$(echo -e '\u256d\u2500')"
 		if [[ "$(dirs -p | wc -l)" != "1" ]] ; then
-			local c="$(echo -e '\u2934') "
+			local c="$VIOLET$(echo -e '\u2934') "
 		fi
 		PS1+="\e[90m$c\e[0m"
 		if [[ ! -z "${VIRTUAL_ENV}" ]]; then
-			PS1+="\e[90m$(echo -e '\u2770')\e[32m$(basename $VIRTUAL_ENV)\e[90m$(echo -e '\u2771')\e[0m"
+			PS1+="\e[90m$VIOLET$(echo -e '\u2770')\e[32m$(basename $VIRTUAL_ENV)\e[90m$VIOLET$(echo -e '\u2771')\e[0m"
 		fi
 		### Add Git Status to bash prompt
 		local __git_branch_color="$GREEN"
@@ -200,7 +200,7 @@ if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
 
 		# Command Line
 		#PS1+="\n\e[90m$(echo -e '\u2570\u2500\u2bc8') \e[0m"
-		PS1+="\n\e[90m$(echo -e '└─▶ ') \e[0m"
+		PS1+="\n\e[90m$VIOLET$(echo -e '└─▶ ') \e[0m"
 	}
 
 	export PROMPT_COMMAND=__prompt_command
