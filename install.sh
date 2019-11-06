@@ -77,3 +77,8 @@ sudo apt-get -y install smartmontools
 sudo apt -y autoremove
 
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -P ~/.bash/
+
+# pyenv require
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev liblzma-dev python-openssl
