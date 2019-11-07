@@ -194,7 +194,7 @@ if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
 		if [[ "${__git_branch}" =~ "$" ]]; then # if there is something stashed
             __git_status_symbol+="(stashed)"
         fi
-        if [[ __git_is_clean == 1 ]]; then
+        if [[ ${__git_is_clean} == 1 ]]; then
 		    __git_status_symbol="✔" #"\xE2\x9C\x94"
         fi 
 		if [[ "${__git_branch}" =~ "<" ]]; then # if there are behind
