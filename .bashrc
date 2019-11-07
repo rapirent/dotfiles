@@ -147,83 +147,91 @@ if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
 	RED="\[\033[0;31m\]"
 	VIOLET="\[\033[01;35m\]"
     WHITE="\[\033[0;37m\]"
+    SEGMENT_SEPARATOR="\ue0b0"
+    PLUSMINUS="\u00b1"
+    BRANCH="\ue0a0"
+    DETACHED="\u27a6"
+    CROSS="\u2718"
+    LIGHTNING="\u26a1"
+    GEAR="\u2699"
+    #local __cur_location="$BLUE\W"           # capital 'W': current directory, small 'w': full file path
+    function __prompt_command() {
+        local ERRORCODE="$?"
+        PS1="${debian_chroot:+($debian_chroot)}"
 
-	#local __cur_location="$BLUE\W"           # capital 'W': current directory, small 'w': full file path
-	function __prompt_command() {
-		local ERRORCODE="$?"
-		PS1="${debian_chroot:+($debian_chroot)}"
+        # Errorcode (conditional)
+        if [ ${ERRORCODE} != 0 ]; then
+            PS1+="\e[90m$WHITE    $(echo -e '\u2570\u2500\u2770')\e[1;31m$ERRORCODE\e[90m$WHITE$(echo -e '\u2771')\e[0m\n"
+        fi
 
-		# Errorcode (conditional)
-		if [ ${ERRORCODE} != 0 ]; then
-			PS1+="\e[90m$WHITE    $(echo -e '\u2570\u2500\u2770')\e[1;31m$ERRORCODE\e[90m$WHITE$(echo -e '\u2771')\e[0m\n"
-		fi
-
-		# Main line
-		local c="$WHITE$(echo -e '\u256d\u2500')"
-		if [[ "$(dirs -p | wc -l)" != "1" ]] ; then
-			local c="$WHITE$(echo -e '\u2934') "
-		fi
-		PS1+="\e[90m$c\e[0m"
-		if [[ ! -z "${VIRTUAL_ENV}" ]]; then
-			PS1+="\e[90m$WHITE$(echo -e '\u2770')\e[32m$(basename $VIRTUAL_ENV)\e[90m$WHITE$(echo -e '\u2771')\e[0m "
-		fi
-		### Add Git Status to bash prompt
-		local __git_branch_color="$GREEN"
-		local __git_status_symbol="" #"\xE2\x9C\x94"
-		local __git_branch=$(__git_ps1)
+        # Main line
+        #local c="$WHITE$(echo -e '\u256d\u2500')"
+        #if [[ "$(dirs -p | wc -l)" != "1" ]] ; then
+        #	local c="$WHITE$(echo -e '\u2934') "
+        #fi
+        PS1+="\e[90m$c\e[0m"
+        if [[ ! -z "${VIRTUAL_ENV}" ]]; then
+            PS1+="\e[90m$WHITE$(echo -e '\u2770')\e[32m$(basename $VIRTUAL_ENV)\e[90m$WHITE$(echo -e '\u2771')\e[0m "
+        fi
+        ### Add Git Status to bash prompt
+        local __git_branch_color="$GREEN"
+        local __git_status_symbol="" #"\xE2\x9C\x94"
+        local __git_branch=$(__git_ps1)
         local __git_is_clean=1
 
-		# colour branch name depending on state
-		if [[ "${__git_branch}" =~ "*" ]]; then # if repository is dirty
-			__git_branch_color="$YELLOW"
-			__git_status_symbol+="● "
+        # colour branch name depending on state
+        if [[ "${__git_branch}" =~ "*" ]]; then # if repository is dirty
+            __git_branch_color="$YELLOW"
+            __git_status_symbol+="● "
             __git_is_clean=0
         fi
 
-		if [[ "${__git_branch}" =~ "+" ]]; then # if there are staged files
-			__git_branch_color="$CYAN"
-			__git_status_symbol+="✚ "
+        if [[ "${__git_branch}" =~ "+" ]]; then # if there are staged files
+            __git_branch_color="$CYAN"
+            __git_status_symbol+="✚ "
             __git_is_clean=0
         fi
 
-		if [[ "${__git_branch}" =~ "%" ]]; then # if there are only untracked files
-			__git_branch_color="$LIGHT_GRAY"
-			__git_status_symbol+="… "
+        if [[ "${__git_branch}" =~ "%" ]]; then # if there are only untracked files
+            __git_branch_color="$LIGHT_GRAY"
+            __git_status_symbol+="… "
             __git_is_clean=0
         fi
-		if [[ "${__git_branch}" =~ "$" ]]; then # if there is something stashed
+        if [[ "${__git_branch}" =~ "$" ]]; then # if there is something stashed
             __git_status_symbol+="(stashed)"
         fi
         if [[ ${__git_is_clean} == 1 ]]; then
-		    __git_status_symbol="✔" #"\xE2\x9C\x94"
+            __git_status_symbol="✔" #"\xE2\x9C\x94"
         fi 
-		if [[ "${__git_branch}" =~ "<" ]]; then # if there are behind
+        if [[ "${__git_branch}" =~ "<" ]]; then # if there are behind
             __git_status_symbol+=" ↓"
-		elif [[ "${__git_branch}" =~ ">" ]]; then # if there are ahead
+        elif [[ "${__git_branch}" =~ ">" ]]; then # if there are ahead
             __git_status_symbol+=" ↑"
-		elif [[ "${__git_branch}" =~ "<>" ]]; then # if there are ahead
+        elif [[ "${__git_branch}" =~ "<>" ]]; then # if there are ahead
             __git_status_symbol="✖"
-			__git_branch_color="$RED"
+            __git_branch_color="$RED"
         fi
 
-		if [[ -z ${__git_branch} ]]; then
-			__git_status_symbol=""
-		fi
-		parse_git_branch() {
-			git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-		}
-		PS1+="\u@\h \[\033[32m\]\w" 
-		PS1+="$__git_branch_color\$(parse_git_branch) $__git_status_symbol\[\033[00m\]"
+        parse_git_branch() {
+            git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+        }
+        PS1+="\u@\h $MAGENTA\w\e[0m"
+        if [[ -z ${__git_branch} ]]; then
+            __git_status_symbol=""
+        else
+            PS1+="$__git_branch_color $(echo -e $BRANCH)\$(parse_git_branch) $__git_status_symbol\[\033[00m\]"
+        fi
+        PS1+=" $(echo -e $SEGMENT_SEPARATOR) "
 
-		#### Change terminal title
-		#PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
-		#PS1+=" \e[33;1m\w\e[m"
-		#PS1+="\$(__git_ps1)"
+        #### Change terminal title
+        #PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
+        #PS1+=" \e[33;1m\w\e[m"
+        #PS1+="\$(__git_ps1)"
 
-		# Command Line
-		#PS1+="\n\e[90m$(echo -e '\u2570\u2500\u2bc8') \e[0m"
-		PS1+="\n\e[90m$WHITE$(echo -e '└─▶ ') \e[0m"
-	}
+        # Command Line
+        #PS1+="\n\e[90m$(echo -e '\u2570\u2500\u2bc8') \e[0m"
+        #PS1+="\n\e[90m$WHITE$(echo -e '└─▶ ')"
+    }
 
-	export PROMPT_COMMAND=__prompt_command
+    export PROMPT_COMMAND=__prompt_command
 fi
