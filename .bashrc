@@ -176,19 +176,19 @@ if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
 		# colour branch name depending on state
 		if [[ "${__git_branch}" =~ "*" ]]; then # if repository is dirty
 			__git_branch_color="$YELLOW"
-			__git_status_symbol+="●"
+			__git_status_symbol+="● "
             __git_is_clean=0
         fi
 
 		if [[ "${__git_branch}" =~ "+" ]]; then # if there are staged files
 			__git_branch_color="$CYAN"
-			__git_status_symbol+="✚"
+			__git_status_symbol+="✚ "
             __git_is_clean=0
         fi
 
 		if [[ "${__git_branch}" =~ "%" ]]; then # if there are only untracked files
 			__git_branch_color="$LIGHT_GRAY"
-			__git_status_symbol+="…"
+			__git_status_symbol+="… "
             __git_is_clean=0
         fi
 		if [[ "${__git_branch}" =~ "$" ]]; then # if there is something stashed
@@ -198,9 +198,9 @@ if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
 		    __git_status_symbol="✔" #"\xE2\x9C\x94"
         fi 
 		if [[ "${__git_branch}" =~ "<" ]]; then # if there are behind
-            __git_status_symbol+="|↓"
+            __git_status_symbol+=" ↓"
 		elif [[ "${__git_branch}" =~ ">" ]]; then # if there are ahead
-            __git_status_symbol+="|↑"
+            __git_status_symbol+=" ↑"
 		elif [[ "${__git_branch}" =~ "<>" ]]; then # if there are ahead
             __git_status_symbol="✖"
 			__git_branch_color="$RED"
