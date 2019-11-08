@@ -82,3 +82,11 @@ wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-pro
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
 libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
 xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+
+# chinese-input
+sudo apt-get install fcitx fcitx-chewing
+export LC_CTYPE=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# ref: https://unix.stackexchange.com/questions/281858/difference-between-xinitrc-xsession-and-xsessionrc
+cp .xsession ~/.xsession
