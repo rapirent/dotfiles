@@ -89,4 +89,22 @@ export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # ref: https://unix.stackexchange.com/questions/281858/difference-between-xinitrc-xsession-and-xsessionrc
-cp .xsession ~/.xsession
+cp .xsession ~/
+cp .pampam_environment ~/
+SYSCONFDIR=/etc
+cp fcitx-autostart.desktop ${SYSCONFDIR}/xdg/autostart/
+sudo apt remove ibus
+
+# open forticlient
+sudo apt-get install gcc automake autoconf libssl-dev make pkg-config
+git clone https://github.com/adrienverge/openfortivpn.git ~/openfortivpn
+cd ~/openfortivpn
+./autogen.sh
+./configure --prefix=/usr/local --sysconfdir=/etc
+make
+sudo make install
+
+# openssh
+sudo apt-get install openssh-server
+sudo cp sshd_config /etc/ssh/
+sudo /etc/init.d/ssh start
