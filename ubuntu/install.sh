@@ -108,3 +108,26 @@ sudo make install
 sudo apt-get install openssh-server
 sudo cp sshd_config /etc/ssh/
 sudo /etc/init.d/ssh start
+sudo apt-get install autoconf
+
+# ssd setting 
+# ref: https://www.itread01.com/content/1550606791.html
+# sudo vim /etc/fstab
+#tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0
+#tmpfs /var/tmp tmpfs defaults,noatime,mode=1777 0 0
+#tmpfs /var/log tmpfs defaults,noatime,mode=1777 0 0
+
+cd ~/.cache/google-chrome/Default
+rm -rf Cache
+ln -s /tmp Cache
+rm -rf Media\ Cache
+ln -s /tmp Media\ Cache
+
+cd ~
+rm -rf .cache
+ln -s /tmp .cache
+
+# autofs
+sudo apt-get install nfs-common autofs
+# need to edit the /etc/auto.master /etc/auto.nfs
+sudo /etc/init.d/autofs restart
