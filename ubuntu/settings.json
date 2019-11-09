@@ -1,8 +1,9 @@
 {
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "Monokai",
   "editor.fontFamily": "Ubuntu Mono derivative Powerline",
-  "editor.fontSize": 16,
+  "editor.fontSize": 24,
+  "editor.fontSize": 24,
+  "workbench.colorTheme": "Solarized Dark",
   "files.trimTrailingWhitespace": true,
   "workbench.iconTheme": "vscode-icons",
   "editor.rulers": [80, 120],
@@ -24,5 +25,5 @@
   "editor.detectIndentation": false,
   "editor.insertSpaces": true,
   "html.format.enable": true,
-  "files.insertFinalNewline": true
+"files.insertFinalNewline": true
 }

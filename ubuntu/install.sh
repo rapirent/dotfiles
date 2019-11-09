@@ -131,3 +131,8 @@ ln -s /tmp .cache
 sudo apt-get install nfs-common autofs
 # need to edit the /etc/auto.master /etc/auto.nfs
 sudo /etc/init.d/autofs restart
+
+# code-server
+wget https://github.com/cdr/code-server/releases/download/2.1688-vsc1.39.2/code-server2.1688-vsc1.39.2-linux-x86_64.tar.gz
+tar --extract --file code-server2.1688-vsc1.39.2-linux-x86_64.tar.gz
+cp settings.json ~/.local/share/code-server/User/
