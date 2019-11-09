@@ -66,9 +66,15 @@ list=("HookyQR.beautify" "abusaidm.html-snippets" "bibhasdn.django-html" "bibhas
 for i in "${list[@]}"; do
     code --install-extension "$i"
 done
+# you need to setup the python path for pylint
 sudo mkdir -p ~/.config/Code/User
 cp keybindings.json ~/.config/Code/User
 cp settings.json ~/.config/Code/User
+# code-server
+wget https://github.com/cdr/code-server/releases/download/2.1688-vsc1.39.2/code-server2.1688-vsc1.39.2-linux-x86_64.tar.gz
+tar --extract --file code-server2.1688-vsc1.39.2-linux-x86_64.tar.gz
+cp settings.json ~/.local/share/code-server/User/
+cp keybindings.json ~/.local/share/code-server/User/
 
 
 # S.M.A.R.T
@@ -82,6 +88,7 @@ wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-pro
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
 libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
 xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
 # chinese-input
 sudo apt-get install fcitx fcitx-chewing
@@ -110,7 +117,7 @@ sudo cp sshd_config /etc/ssh/
 sudo /etc/init.d/ssh start
 sudo apt-get install autoconf
 
-# ssd setting 
+# ssd setting
 # ref: https://www.itread01.com/content/1550606791.html
 # sudo vim /etc/fstab
 #tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0
@@ -132,7 +139,3 @@ sudo apt-get install nfs-common autofs
 # need to edit the /etc/auto.master /etc/auto.nfs
 sudo /etc/init.d/autofs restart
 
-# code-server
-wget https://github.com/cdr/code-server/releases/download/2.1688-vsc1.39.2/code-server2.1688-vsc1.39.2-linux-x86_64.tar.gz
-tar --extract --file code-server2.1688-vsc1.39.2-linux-x86_64.tar.gz
-cp settings.json ~/.local/share/code-server/User/
