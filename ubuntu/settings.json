@@ -1,7 +1,7 @@
 {
   "workbench.startupEditor": "newUntitledFile",
   "workbench.colorTheme": "Monokai",
-  "editor.fontFamily": "Ubuntu Mono derivative Powerline ",
+  "editor.fontFamily": "Ubuntu Mono derivative Powerline",
   "editor.fontSize": 16,
   "files.trimTrailingWhitespace": true,
   "workbench.iconTheme": "vscode-icons",
