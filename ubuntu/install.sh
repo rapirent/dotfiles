@@ -138,4 +138,3 @@ ln -s /tmp .cache
 sudo apt-get install nfs-common autofs
 # need to edit the /etc/auto.master /etc/auto.nfs
 sudo /etc/init.d/autofs restart
-
