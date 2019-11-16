@@ -169,11 +169,12 @@ if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
         #if [[ "$(dirs -p | wc -l)" != "1" ]] ; then
         #	local c="$WHITE$(echo -e '\u2934') "
         #fi
+        #PS1+="\e[90m$c\e[0m"
         local c="$(echo -e '\u256d\u2500')"
         if [[ "$(dirs -p | wc -l)" != "1" ]] ; then
         	local c="$(echo -e '\u2934') "
         fi
-        PS1+="\e[90m$c\e[0m"
+        PS1+="$c"
         if [[ ! -z "${VIRTUAL_ENV}" ]]; then
             PS1+="\e[90m$WHITE$(echo -e '\u2770')\e[32m$(basename $VIRTUAL_ENV)\e[90m$WHITE$(echo -e '\u2771')\e[0m "
         fi
@@ -236,7 +237,7 @@ if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
         # Command Line
         #PS1+="\n\e[90m$(echo -e '\u2570\u2500\u2bc8') \e[0m"
         #PS1+="\n\e[90m$WHITE$(echo -e '└─▶ ')"
-        PS1+="\n\e[90m$(echo -e '└─$ ')"
+        PS1+="\n$(echo -e '└─▶ ')"
     }
 
     export PROMPT_COMMAND=__prompt_command
