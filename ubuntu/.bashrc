@@ -242,3 +242,5 @@ if [[ -e /usr/lib/git-core/git-sh-prompt ]]; then
 
     export PROMPT_COMMAND=__prompt_command
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

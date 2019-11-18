@@ -138,3 +138,11 @@ ln -s /tmp .cache
 sudo apt-get install nfs-common autofs
 # need to edit the /etc/auto.master /etc/auto.nfs
 sudo /etc/init.d/autofs restart
+
+# fuzzy history search
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+# some bin file
+sudo cp unpack /bin/unpack
+sudo chmod a+x /bin/unpack
