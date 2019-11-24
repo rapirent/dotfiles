@@ -146,3 +146,10 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 # some bin file
 sudo cp unpack /bin/unpack
 sudo chmod a+x /bin/unpack
+
+# DNS setting
+# ref: https://askubuntu.com/questions/1012641/dns-set-to-systemds-127-0-0-53-how-to-change-permanently
+#Recent versions of NetworkManager, for example, would do this automatically if /etc/resolv.conf is a symlink pointing inside /run/systemd/resolve or to /usr/lib/systemd/resolv.conf.
+sudo cp resolved.conf /etc/systemd/resolved.conf
+sudo systemctl restart systemd-resolved
+systemd-resolve --status
