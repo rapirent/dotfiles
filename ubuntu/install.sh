@@ -153,3 +153,7 @@ sudo chmod a+x /bin/unpack
 sudo cp resolved.conf /etc/systemd/resolved.conf
 sudo systemctl restart systemd-resolved
 systemd-resolve --status
+
+sudo apt install inetutils-traceroute
+#sudo /etc/init.d/networking restart
+#sudo vim /etc/network/interfaces
