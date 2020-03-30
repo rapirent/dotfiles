@@ -1,0 +1,15 @@
+[Unit]
+Description=Auto SSH Tunnel
+After=network-online.target
+[Service]
+User=airider
+Type=simple
+ExecStart=/usr/bin/autossh -p PORT -M 0 -NR '*:port:localhost:22' kuoteng@url
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+StartLimitIntervalSec=5
+StartLimitBurst=12
+Restart=always
+[Install]
+WantedBy=multi-user.target
+WantedBy=graphical.target
