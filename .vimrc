@@ -106,7 +106,7 @@ set smarttab
 set mouse=a                 "let mouse to visual
 
 let NERDTreeWinPos="right"
-let NERDTreeMapOpenInTab='<ENTER>'
+"let NERDTreeMapOpenInTab='<ENTER>'
 let g:solarized_termcolors=256
 "set background=light
 set background=dark
@@ -118,3 +118,4 @@ filetype indent on          "indent according file format
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+autocmd FileType python,c,cpp,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
