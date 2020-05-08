@@ -1,21 +1,23 @@
 {
-    "workbench.startupEditor": "newUntitledFile",
-    "editor.fontFamily": "Ubuntu Mono derivative Powerline",
-    "editor.fontSize": 24,
-    "workbench.colorTheme": "Solarized Dark",
-    "astyle.executable": "/usr/local/bin/astyle",
-    "astyle.cmd_options": [
-        "--style=linux",
-        "--indent=spaces",
-        "--convert-tabs",
-        "--lineend=linux",
-        "--formatted",
-        "--recursive",
-        "--max-code-length=120"
-    ],
+    //macOS locate at /Users/<yourname>/Library/Application Support/Code/User
+    "editor.fontFamily": "Menlo, Monaco, 'Cousine for powerline', monospace",
+    "editor.fontSize": 20,
+
+    // "astyle.executable": "/usr/local/bin/astyle",
+    // "astyle.cmd_options": [
+    //     "--style=linux",
+    //     "--indent=spaces",
+    //     "--convert-tabs",
+    //     "--lineend=linux",
+    //     "--formatted",
+    //     "--recursive",
+    //     "--max-code-length=120"
+    // ],
+
     // "python.pythonPath": "",
     // "python.linting.pycodestyleEnabled": true,
     // "python.linting.pylintEnabled": true,
+
     "files.trimTrailingWhitespace": true,
     "editor.rulers": [
         80,
@@ -23,12 +25,10 @@
     ],
     "window.zoomLevel": 0,
     "files.autoSave": "off",
-    "python.linting.pycodestyleEnabled": true,
-    "python.linting.pylintEnabled": true,
+
     "[javascript]": {
         "editor.tabSize": 2
     },
-    "eslint.autoFixOnSave": false,
     "[html]": {
         "editor.tabSize": 2
     },
@@ -40,12 +40,13 @@
     "html.format.enable": true,
     "files.insertFinalNewline": true,
     "diffEditor.ignoreTrimWhitespace": true,
-    "[c]": {
-        "editor.defaultFormatter": "chiehyu.vscode-astyle"
-    },
-    "[cpp]": {
-        "editor.defaultFormatter": "chiehyu.vscode-astyle"
-    },
+    // C++
+    // "[c]": {
+    //     "editor.defaultFormatter": "chiehyu.vscode-astyle"
+    // },
+    // "[cpp]": {
+    //     "editor.defaultFormatter": "chiehyu.vscode-astyle"
+    // },
     "files.associations": {
         "*.c": "c"
     },
@@ -53,6 +54,5 @@
     "workbench.colorCustomizations": {
         "diffEditor.removedTextBackground": "#FF000055",
         "diffEditor.insertedTextBackground": "#ffff0055"
-    },
-    "remote.SSH.showLoginTerminal": true
-  }
+    }
+}
