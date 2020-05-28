@@ -1,9 +1,22 @@
+#!bin/bash
+
+#homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-#!bin/bash
-#pyenv
 brew update
+brew install newsboat # RSS feed
+brew install curl
+#pyenv
 brew install pyenv
+#configure source zip
+brew install zlib bzip2 libiconv
+
+#php https://github.com/phpbrew/phpbrew
+# may need the GNU readline: brew install readline
+curl -L -O https://github.com/phpbrew/phpbrew/releases/latest/download/phpbrew.phar
+chmod +x phpbrew.phar
+sudo mv phpbrew.phar /usr/local/bin/phpbrew
+
 
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

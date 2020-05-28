@@ -157,3 +157,9 @@ systemd-resolve --status
 sudo apt install inetutils-traceroute
 #sudo /etc/init.d/networking restart
 #sudo vim /etc/network/interfaces
+
+#php https://github.com/phpbrew/phpbrew
+curl -L -O https://github.com/phpbrew/phpbrew/releases/latest/download/phpbrew.phar
+chmod +x phpbrew.phar
+sudo mv phpbrew.phar /usr/local/bin/phpbrew
+
