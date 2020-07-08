@@ -7,7 +7,7 @@ sudo add-apt-repository ppa:webupd8team/java -y
 sudo apt update -y
 
 # install basic software
-sudo apt-get install -y gcc g++ make vim curl wget zsh tmux fonts-font-awesome git tig git-flow gpaint
+sudo apt-get install -y gcc g++ make vim curl wget zsh tmux fonts-font-awesome git tig git-flow gpaint apt-transport-https
 
 # git
 cp .gitconfig $HOME
@@ -163,3 +163,15 @@ curl -L -O https://github.com/phpbrew/phpbrew/releases/latest/download/phpbrew.p
 chmod +x phpbrew.phar
 sudo mv phpbrew.phar /usr/local/bin/phpbrew
 
+# networking
+sudo cp 00-iptable-flush /usr/lib/networkd-dispatcher/routable.d/00-iptable-flush
+sudo cp 50-iptable-mdns /usr/lib/networkd-dispatcher/routable.d/50-iptable-mdns-block
+sudo chmod +x /usr/lib/networkd-dispatcher/routable.d/00-iptable-flush
+sudo chmod +x /usr/lib/networkd-dispatcher/routable.d/50-iptable-mdns-block
+sudo netplan apply
+
+# i3
+sudo apt install i3
+systemctl disable gdm
+systemctl set-default multi-user.target #text
+sudo cp grub /etc/default/grub
