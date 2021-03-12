@@ -104,12 +104,14 @@ source $HOME/.path
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
-if which pyenv-virtualenv-init > /dev/null;
-  then eval "$(pyenv virtualenv-init -)";
-fi
+export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
-source /usr/local/opt/nvm/nvm.sh
+if which pyenv-virtualenv-init > /dev/null;
+  then eval "$(pyenv virtualenv-init -)";
+fi
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 eval "$(pipenv --completion)"
-
+export PATH="/usr/local/opt/rabbitmq/sbin:/usr/local/nginx/sbin/:$PATH"
