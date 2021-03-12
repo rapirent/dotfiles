@@ -2,6 +2,10 @@
 # for examples
 
 # If not running interactively, don't do anything
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+    startx
+fi
+
 case $- in
     *i*) ;;
       *) return;;
@@ -256,3 +260,7 @@ PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; h
 # NodeJS
 export NODEJS_HOME=/home/kuoteng/node-v13.9.0-linux-x64/bin
 export PATH=$NODEJS_HOME:$PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
