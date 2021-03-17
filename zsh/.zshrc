@@ -111,7 +111,8 @@ fi
 if which pyenv-virtualenv-init > /dev/null;
   then eval "$(pyenv virtualenv-init -)";
 fi
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-eval "$(pipenv --completion)"
 export PATH="/usr/local/opt/rabbitmq/sbin:/usr/local/nginx/sbin/:$PATH"
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
+alias vim="nvim"
+
