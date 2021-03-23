@@ -1,0 +1,17 @@
+function na()
+{
+	if [[ $# -lt 2 ]] ; then
+
+		echo "nb add and edit | Adds an new note in the default editor."
+		echo "Usage: na <title> <first line of note>"
+
+	else
+    	local title="$1"
+		shift
+		declare -a first_line_of_note=("$@")
+
+		echo "# ${first_line_of_note[@]}" | nb add -f "$title" --edit
+	fi
+}
+
+alias gtd="nb edit gtd.md"
