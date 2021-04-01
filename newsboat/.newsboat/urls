@@ -1,9 +1,11 @@
+https://www.rfc-editor.org/rfcrss.xml
 https://www.v2ex.com/index.xml
 https://www.v2ex.com/feed/python.xml
 https://www.v2ex.com/feed/go.xml
 https://www.v2ex.com/feed/programmer.xml
 https://planet.mysql.com/rss20.xml
 https://www.reddit.com/r/mysql/.rss
+https://www.reddit.com/r/ietf.org/.rss
 https://dotnetkicks.com/feeds/rss
 https://www.reddit.com/r/dotnet/.rss?format=xml
 https://www.dotnetweekly.com/feed/
@@ -13,8 +15,8 @@ https://blog.2ndquadrant.com/feed
 https://www.reddit.com/r/PostgreSQL/.rss?format=xml
 https://moelove.info/index.xml
 http://blog.gslin.org/feed/
-https://github.com/kuoteng.private.atom?token=ADTZWE6T4HRP7TFUIR2EQSF43OBQQ
-https://github.com/Rivenna36870.private.atom?token=AM4K4KR6J3D6WSOHJTQLIM543OANQ
+https://github.com/rapirent.private.atom
+https://github.com/Rivenna36870.private.atom
 http://arxiv.org/rss/cs
 http://arxiv.org/rss/math
 https://36kr.com/feed
@@ -48,3 +50,4 @@ https://www.dcard.tw/_api/forums/makeup/posts
 https://www.dcard.tw/_api/forums/job/posts
 https://www.dcard.tw/_api/forums/money/posts
 https://www.redhat.com/en/rss/blog
+https://blog.csdn.net/dog250/rss/list

@@ -116,3 +116,5 @@ export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 alias vim="nvim"
 
+source $HOME/.nb_util
+alias news="newsboat"
