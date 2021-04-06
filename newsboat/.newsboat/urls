@@ -1,53 +1,50 @@
-https://www.rfc-editor.org/rfcrss.xml
-https://www.v2ex.com/index.xml
-https://www.v2ex.com/feed/python.xml
-https://www.v2ex.com/feed/go.xml
-https://www.v2ex.com/feed/programmer.xml
-https://planet.mysql.com/rss20.xml
-https://www.reddit.com/r/mysql/.rss
-https://www.reddit.com/r/ietf.org/.rss
-https://dotnetkicks.com/feeds/rss
-https://www.reddit.com/r/dotnet/.rss?format=xml
-https://www.dotnetweekly.com/feed/
-https://www.reddit.com/r/cprogramming/.rss?format=xml
-https://planet.postgresql.org/rss20.xml
-https://blog.2ndquadrant.com/feed
+https://www.rfc-editor.org/rfcrss.xml programming
+https://www.v2ex.com/index.xml programming
+https://www.v2ex.com/feed/programmer.xml programming
+https://planet.mysql.com/rss20.xml programming 
+https://www.reddit.com/r/mysql/.rss programming 
+https://www.reddit.com/r/ietf.org/.rss programming
+https://dotnetkicks.com/feeds/rss programming 
+https://www.reddit.com/r/dotnet/.rss?format=xml programming 
+https://www.dotnetweekly.com/feed/ programming 
+https://www.reddit.com/r/cprogramming/.rss?format=xml programming 
+https://www.reddit.com/r/vpn/.rss programming 
+https://planet.postgresql.org/rss20.xml programming 
+https://blog.2ndquadrant.com/feed programming 
 https://www.reddit.com/r/PostgreSQL/.rss?format=xml
-https://moelove.info/index.xml
-http://blog.gslin.org/feed/
-https://github.com/rapirent.private.atom
-https://github.com/Rivenna36870.private.atom
-http://arxiv.org/rss/cs
-http://arxiv.org/rss/math
-https://36kr.com/feed
-https://www.huxiu.com/rss/0.xml
-https://www.ifanr.com/feed
-http://feeds.feedburner.com/TechCrunch/
-https://www.zhihu.com/rss
-https://pansci.asia/feed
-http://feeds.feedburner.com/zhihu-daily
-http://feeds.feedburner.com/TechCrunch/social
-http://feeds.feedburner.com/TechCrunch/startups
-https://www.ptt.cc/atom/Warfare.xml
-https://www.ptt.cc/atom/Soft_Job.xml
-https://www.ptt.cc/atom/Tech_Job.xml
-https://www.ptt.cc/atom/Stock.xml
-https://www.ptt.cc/atom/Lifeismoney.xml
-https://www.ptt.cc/atom/Historia.xml
-https://www.ptt.cc/atom/Military.xml
-https://www.ptt.cc/atom/Fund.xml
-https://www.ptt.cc/atom/Bank_Service.xml
-https://www.ptt.cc/atom/Japanavgirls.xml
-https://2cat.komica.org/~tedc21thc/new/rss.xml
-https://2cat.komica.org/~tedc21thc/live/rss.xml
-https://cprss.s3.amazonaws.com/javascriptweekly.com.xml
-https://www.linux.com/feed/
-https://www.cyberciti.biz/feed/
-https://www.tecmint.com/feed/
-https://www.linuxfoundation.org/feed/
-https://www.dcard.tw/_api/forums/dressup/posts
-https://www.dcard.tw/_api/forums/makeup/posts
-https://www.dcard.tw/_api/forums/job/posts
-https://www.dcard.tw/_api/forums/money/posts
-https://www.redhat.com/en/rss/blog
-https://blog.csdn.net/dog250/rss/list
+https://moelove.info/index.xml programming
+http://blog.gslin.org/feed/ programming
+https://github.com/rapirent.private.atom programming
+https://github.com/Rivenna36870.private.atom programming
+http://arxiv.org/rss/cs academic
+http://arxiv.org/rss/math academic
+https://36kr.com/feed programming
+https://www.huxiu.com/rss/0.xml programming
+https://www.ifanr.com/feed programming
+http://feeds.feedburner.com/TechCrunch/ programming
+https://www.zhihu.com/rss programming
+http://feeds.feedburner.com/zhihu-daily programming
+http://feeds.feedburner.com/TechCrunch/social programming
+http://feeds.feedburner.com/TechCrunch/startups programming
+https://www.ptt.cc/atom/Warfare.xml history
+https://www.ptt.cc/atom/Soft_Job.xml job
+https://www.ptt.cc/atom/Tech_Job.xml job
+https://www.ptt.cc/atom/Stock.xml invest
+https://www.ptt.cc/atom/Lifeismoney.xml life
+https://www.ptt.cc/atom/Historia.xml history
+https://www.ptt.cc/atom/Military.xml history
+https://www.ptt.cc/atom/Fund.xml invest
+https://www.ptt.cc/atom/Bank_Service.xml invest
+https://2cat.komica.org/~tedc21thc/new/rss.xml anime
+https://2cat.komica.org/~tedc21thc/live/rss.xml anime
+https://www.linux.com/feed/ programming
+https://www.cyberciti.biz/feed/ programming
+https://www.tecmint.com/feed/ programming
+https://www.dcard.tw/_api/forums/dressup/posts life
+https://www.dcard.tw/_api/forums/makeup/posts life
+https://www.dcard.tw/_api/forums/job/posts job
+https://www.dcard.tw/_api/forums/money/posts invest
+https://hnrss.org/jobs job
+https://hnrss.org/newest programming
+https://www.redhat.com/en/rss/blog programming
+https://blog.csdn.net/dog250/rss/list programming
