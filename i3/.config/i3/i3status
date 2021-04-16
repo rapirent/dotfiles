@@ -18,36 +18,39 @@ order += "volume master"
 order += "load"
 order += "battery 1"
 order += "tztime local"
+order += "cpu_temperature 0"
+order += "ram"
+order += "cpu_usage"
 wireless _first_ {
-        format_up = " (%essid - %quality) %ip"
-        format_down = ""
-        color_bad = "#777777"
+    format_up = " (%essid - %quality) %ip"
+    format_down = ""
+    color_bad = "#777777"
 }
 ipv6 {
 	format_down = "IPv6"
 	color_bad = "#777777"
 }
 ethernet _first_ {
-	format_up = " %ip"
+	format_up = " %ip (%speed)"
 	format_down = ""
 	color_bad = "#777777"
 }
 volume master {
-        format = " %volume"
-        format_muted = " (%volume)"
-        device = "default"
-        mixer = "Master"
-        mixer_idx = 0
-}     
+    format = " %volume"
+    format_muted = " (%volume)"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
 battery 1 {
-        format = "%status %percentage %remaining"
-        status_bat = ""
-        status_chr = ""
-        status_full = ""
-        low_threshold = 30
-        threshold_type = percentage
-        integer_battery_capacity = true
-        color_good = "#0000FF"
+    format = "%status %percentage %remaining"
+    status_bat = ""
+    status_chr = ""
+    status_full = ""
+    low_threshold = 30
+    threshold_type = percentage
+    integer_battery_capacity = true
+    color_good = "#0000FF"
 }
 run_watch DHCP {
 	pidfile = "/var/run/dhclient*.pid"
@@ -62,13 +65,18 @@ run_watch VPN {
 	color_bad = "#777777"
 }
 tztime local {
-        format = " %h %d |  %I:%M"
+    format = " %h %d %a|  %I:%M"
 }
 load {
-        format = " %1min"
+    format = " %1min"
 }
 disk "/" {
-        format = " %avail"
+    format = " %avail"
+}
+cpu_temperature 0 {
+    format = "%degrees °C"
+#    path = "/sys/class/thermal/thermal_zone0/temp"
+    path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
 }
 cpu_usage {
 	format = " %usage"
