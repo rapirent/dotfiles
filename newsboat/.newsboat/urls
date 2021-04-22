@@ -1,20 +1,19 @@
 https://www.rfc-editor.org/rfcrss.xml programming
 https://www.v2ex.com/index.xml programming
 https://www.v2ex.com/feed/programmer.xml programming
-https://planet.mysql.com/rss20.xml programming 
-https://www.reddit.com/r/mysql/.rss programming 
-https://www.reddit.com/r/ietf.org/.rss programming
-https://dotnetkicks.com/feeds/rss programming 
-https://www.reddit.com/r/dotnet/.rss?format=xml programming 
-https://www.dotnetweekly.com/feed/ programming 
-https://www.reddit.com/r/cprogramming/.rss?format=xml programming 
-https://www.reddit.com/r/vpn/.rss programming 
-https://planet.postgresql.org/rss20.xml programming 
-https://blog.2ndquadrant.com/feed programming 
+https://planet.mysql.com/rss20.xml programming
+https://www.reddit.com/r/mysql/.rss programming
+https://dotnetkicks.com/feeds/rss programming
+https://www.reddit.com/r/dotnet/.rss?format=xml programming
+https://www.dotnetweekly.com/feed/ programming
+https://www.reddit.com/r/cprogramming/.rss?format=xml programming
+https://www.reddit.com/r/vpn/.rss programming
+https://planet.postgresql.org/rss20.xml programming
+https://blog.2ndquadrant.com/feed programming
 https://www.reddit.com/r/PostgreSQL/.rss?format=xml
 https://moelove.info/index.xml programming
 http://blog.gslin.org/feed/ programming
-https://github.com/rapirent.private.atom programming
+https://github.com/rapirent.private.atom?token=ADTZWEZQTQQWWMGP5Z5CUGN6RT55K
 https://github.com/Rivenna36870.private.atom programming
 http://arxiv.org/rss/cs academic
 http://arxiv.org/rss/math academic
@@ -40,11 +39,18 @@ https://2cat.komica.org/~tedc21thc/live/rss.xml anime
 https://www.linux.com/feed/ programming
 https://www.cyberciti.biz/feed/ programming
 https://www.tecmint.com/feed/ programming
-https://www.dcard.tw/_api/forums/dressup/posts life
-https://www.dcard.tw/_api/forums/makeup/posts life
-https://www.dcard.tw/_api/forums/job/posts job
-https://www.dcard.tw/_api/forums/money/posts invest
+https://www.dcard.tw/service/api/v2/forums/dressup/posts life
+https://www.dcard.tw/service/api/v2/forums/makeup/posts life
+https://www.dcard.tw/service/api/v2/forums/job/posts job
+https://www.dcard.tw/service/api/v2/forums/money/posts invest
 https://hnrss.org/jobs job
 https://hnrss.org/newest programming
 https://www.redhat.com/en/rss/blog programming
 https://blog.csdn.net/dog250/rss/list programming
+https://rsshub.app/pediy/topic/android/digest
+https://rsshub.app/adnmb/20
+https://rsshub.app/rf/article
+https://rsshub.app/nowcoder/recommend
+https://rsshub.app/nowcoder/discuss/2/4
+https://rsshub.app/muchong/journal
+https://rsshub.app/1point3acres/post/hot
