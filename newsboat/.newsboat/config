@@ -1,4 +1,4 @@
-browser /usr/bin/open -a "/Applications/Google Chrome.app" '%u'
+browser "~/.newsboat/browser.sh"
 #unbind-key j
 #unbind-key k
 #unbind-key J
