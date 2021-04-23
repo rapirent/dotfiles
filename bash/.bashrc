@@ -2,9 +2,6 @@
 # for examples
 
 # If not running interactively, don't do anything
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-    startx
-fi
 
 case $- in
     *i*) ;;
@@ -19,8 +16,8 @@ esac
 #shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-#HISTSIZE=1000
-#HISTFILESIZE=2000
+HISTSIZE=200000
+HISTFILESIZE=200000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -78,13 +75,14 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='ls --color=auto -a'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+    alias rg='rg --color=auto'
 fi
 
 # colored GCC warnings and errors
@@ -259,4 +257,5 @@ PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; h
 
 
 export PATH="$HOME/.nodenv/bin:$PATH"
-alias news="newsboat"
+eval "$(nodenv init -)"
+alias news=newsboat
