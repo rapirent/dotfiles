@@ -121,3 +121,6 @@ alias news="newsboat"
 # cpp
 export CPLUS_INCLUDE_PATH=/usr/local/include
 export LIBRARY_PATH=/usr/local/lib
+export PATH=$PATH:/opt/gradle/gradle-7.0/bin
+[[ -e nb ]] && nb sync
+

@@ -259,3 +259,4 @@ PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; h
 export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 alias news=newsboat
+[[ -e nb ]] && nb sync
