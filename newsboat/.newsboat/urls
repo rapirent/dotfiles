@@ -39,18 +39,21 @@ https://2cat.komica.org/~tedc21thc/live/rss.xml anime
 https://www.linux.com/feed/ programming
 https://www.cyberciti.biz/feed/ programming
 https://www.tecmint.com/feed/ programming
-https://www.dcard.tw/service/api/v2/forums/dressup/posts life
-https://www.dcard.tw/service/api/v2/forums/makeup/posts life
-https://www.dcard.tw/service/api/v2/forums/job/posts job
-https://www.dcard.tw/service/api/v2/forums/money/posts invest
+https://www.dcard.tw/_api/forums/dressup/posts
+https://www.dcard.tw/_api/forums/makeup/posts
+https://www.dcard.tw/_api/forums/job/posts
+https://www.dcard.tw/_api/forums/money/posts
 https://hnrss.org/jobs job
 https://hnrss.org/newest programming
 https://www.redhat.com/en/rss/blog programming
-https://blog.csdn.net/dog250/rss/list programming
+https://blog.csdn.net/dog250/rss/list programming network
 https://rsshub.app/pediy/topic/android/digest
 https://rsshub.app/adnmb/20
-https://rsshub.app/rf/article
-https://rsshub.app/nowcoder/recommend
-https://rsshub.app/nowcoder/discuss/2/4
+https://rsshub.app/rf/article communication electronic
+https://rsshub.app/nowcoder/recommend programming job
+https://rsshub.app/nowcoder/discuss/2/4 programming job
 https://rsshub.app/muchong/journal
 https://rsshub.app/1point3acres/post/hot
+https://kkc.github.io/atom.xml programming python
+https://lrita.github.io/feed.xml programming 
+https://www.xmodulo.com/feed programming system network
