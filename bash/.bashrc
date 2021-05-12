@@ -92,7 +92,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias gitclone='GIT_CURL_VERBOSE=1 GIT_TRACE=1 HUB_VERBOSE=1 git clone'
+alias gclone='GIT_CURL_VERBOSE=1 GIT_TRACE=1 HUB_VERBOSE=1 git clone'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -119,11 +119,11 @@ if ! shopt -oq posix; then
 fi
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-if which pyenv-virtualenv-init > /dev/null;
-  then eval "$(pyenv virtualenv-init -)";
+if which pyenv-virtualenv-init > /dev/null;then
+  eval "$(pyenv virtualenv-init -)";
 fi
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
+  eval "$(pyenv init --path)"
 fi
 
 export CUDA_HOME=/usr/local/cuda-10.0
