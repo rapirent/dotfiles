@@ -6,6 +6,17 @@ fi
 
 HISTSIZE=200000
 HISTFILESIZE=200000
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto -a'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+    alias rg='rg --color=auto'
+fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -14,30 +25,28 @@ if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
 source ~/.zinit/bin/zinit.zsh
+zinit ice blockf
+zinit light zsh-users/zsh-completions
 zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
 zinit light zdharma/fast-syntax-highlighting
+zinit light Aloxaf/fzf-tab
 export PURE_GIT_STASH_SYMBOL="✚ "
 zstyle :prompt:pure:path color white
-zstyle ':prompt:pure:prompt:*' color white
-zstyle :prompt:pure:user color blue
-zstyle :prompt:pure:host color cyan
-zstyle ':prompt:pure:git:*' show yes
+zstyle :prompt:pure:git:stash show yes
 
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-if which pyenv-virtualenv-init > /dev/null;then
-  eval "$(pyenv virtualenv-init -)";
-fi
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path)"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
 fi
+
+export PATH="$HOME/.nodenv/bin:$PATH"
 if command -v nodenv 1>/dev/null 2>&1; then
   eval "$(nodenv init -)"
 fi
-export PATH="$HOME/.nodenv/bin:$PATH"
-
 if [ -f $HOME/.nb_util ]; then
   source $HOME/.nb_util
 fi
@@ -55,8 +64,7 @@ if command -v /opt/homebrew/bin/brew 1>/dev/null 2>&1; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
-
+export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
 
 
 # Avoid duplicates
@@ -66,3 +74,5 @@ setopt histappend
 
 # After each command, append to the history file and reread it
 PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
