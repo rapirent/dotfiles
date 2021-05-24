@@ -39,6 +39,7 @@ zstyle :prompt:pure:git:stash show yes
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
 fi
@@ -50,19 +51,13 @@ fi
 if [ -f $HOME/.nb_util ]; then
   source $HOME/.nb_util
 fi
-[[ -e nb ]] && nb sync
 alias news="newsboat"
-if command -v nvim 1>/dev/null 2>&1; then
-  alias vim="nvim"
-fi
+alias vim="nvim"
 # cpp
 export CPLUS_INCLUDE_PATH=/usr/local/include
 export LIBRARY_PATH=/usr/local/lib
 export PATH=$PATH:/opt/gradle/gradle-7.0/bin
 
-if command -v /opt/homebrew/bin/brew 1>/dev/null 2>&1; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
 
 export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
 
@@ -76,3 +71,7 @@ setopt histappend
 PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH=/opt/homebrew/bin/:$PATH
+export PATH=$PATH:/opt/homebrew/Cellar/openvpn/2.5.2/sbin/
+export PATH=$PATH:/Users/tony/k3d/bin/

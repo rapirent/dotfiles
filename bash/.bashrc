@@ -260,4 +260,3 @@ export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 alias news=newsboat
 source $HOME/.nb_util
-[[ -e nb ]] && nb sync

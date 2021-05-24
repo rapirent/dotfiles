@@ -13,8 +13,6 @@ https://blog.2ndquadrant.com/feed programming
 https://www.reddit.com/r/PostgreSQL/.rss?format=xml
 https://moelove.info/index.xml programming
 http://blog.gslin.org/feed/ programming
-https://github.com/rapirent.private.atom?token=ADTZWEZQTQQWWMGP5Z5CUGN6RT55K
-https://github.com/Rivenna36870.private.atom programming
 http://arxiv.org/rss/cs academic
 http://arxiv.org/rss/math academic
 https://36kr.com/feed programming
@@ -39,10 +37,6 @@ https://2cat.komica.org/~tedc21thc/live/rss.xml anime
 https://www.linux.com/feed/ programming
 https://www.cyberciti.biz/feed/ programming
 https://www.tecmint.com/feed/ programming
-https://www.dcard.tw/_api/forums/dressup/posts
-https://www.dcard.tw/_api/forums/makeup/posts
-https://www.dcard.tw/_api/forums/job/posts
-https://www.dcard.tw/_api/forums/money/posts
 https://hnrss.org/jobs job
 https://hnrss.org/newest programming
 https://www.redhat.com/en/rss/blog programming
@@ -55,5 +49,10 @@ https://rsshub.app/nowcoder/discuss/2/4 programming job
 https://rsshub.app/muchong/journal
 https://rsshub.app/1point3acres/post/hot
 https://kkc.github.io/atom.xml programming python
-https://lrita.github.io/feed.xml programming 
+https://lrita.github.io/feed.xml programming
 https://www.xmodulo.com/feed programming system network
+http://shell-storm.org/rss.xml programming system
+https://ulyc.github.io/feed.xml programming network secure
+https://4hou.win/wordpress/?feed=rss2 programming secure
+http://wulc.me/atom.xml programming
+https://houmin.cc/atom.xml programming
