@@ -1,0 +1,4 @@
+install gnome-session
+get the gtk: gnome-tweaks
+~/.themes: https://github.com/vinceliuice/Mojave-gtk-theme
+~/.icons: https://github.com/keeferrourke/la-capitaine-icon-theme
