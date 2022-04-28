@@ -26,8 +26,10 @@ color info               default   black
 color article            default   default
 
 auto-reload yes
-reload-time 120
-reload-threads 4
+reload-time 600
+reload-threads 8
 download-retries 4
 download-timeout 10
-prepopulate-query-feeds yes
+# prepopulate-query-feeds yes
+cleanup-on-quit	yes
+refresh-on-startup  yes

@@ -1,5 +1,5 @@
 https://www.rfc-editor.org/rfcrss.xml programming
-https://www.v2ex.com/index.xml programming
+https://www.v2ex.com/index.xml stream1
 https://www.v2ex.com/feed/programmer.xml programming
 https://planet.mysql.com/rss20.xml programming
 https://www.reddit.com/r/mysql/.rss programming
@@ -23,22 +23,23 @@ https://www.zhihu.com/rss programming
 http://feeds.feedburner.com/zhihu-daily programming
 http://feeds.feedburner.com/TechCrunch/social programming
 http://feeds.feedburner.com/TechCrunch/startups programming
-https://www.ptt.cc/atom/Warfare.xml history
-https://www.ptt.cc/atom/Soft_Job.xml job
-https://www.ptt.cc/atom/Tech_Job.xml job
-https://www.ptt.cc/atom/Stock.xml invest
-https://www.ptt.cc/atom/Lifeismoney.xml life
-https://www.ptt.cc/atom/Historia.xml history
-https://www.ptt.cc/atom/Military.xml history
-https://www.ptt.cc/atom/Fund.xml invest
-https://www.ptt.cc/atom/Bank_Service.xml invest
+https://www.ptt.cc/atom/Warfare.xml history stream1
+https://www.ptt.cc/atom/Soft_Job.xml job stream1
+https://www.ptt.cc/atom/Tech_Job.xml job stream1
+https://www.ptt.cc/atom/Stock.xml invest stream1 finance
+https://www.ptt.cc/atom/Lifeismoney.xml life stream1
+https://www.ptt.cc/atom/Historia.xml history stream1
+https://www.ptt.cc/atom/Military.xml history stream1
+https://www.ptt.cc/atom/Fund.xml finance
+https://www.ptt.cc/atom/Bank_Service.xml finance
+https://www.ptt.cc/atom/Broad_Band.xml finance
 https://2cat.komica.org/~tedc21thc/new/rss.xml anime
 https://2cat.komica.org/~tedc21thc/live/rss.xml anime
 https://www.linux.com/feed/ programming
 https://www.cyberciti.biz/feed/ programming
 https://www.tecmint.com/feed/ programming
-https://hnrss.org/jobs job
-https://hnrss.org/newest programming
+https://hnrss.org/jobs job stream1
+https://hnrss.org/newest programming stream1
 https://www.redhat.com/en/rss/blog programming
 https://blog.csdn.net/dog250/rss/list programming network
 https://rsshub.app/pediy/topic/android/digest
@@ -101,3 +102,24 @@ https://liaoph.com/feed.xml programming
 https://kuczma.dev/index.xml programming
 https://lrita.github.io/feed.xml programming arch
 http://wulc.me/atom.xml programming machine-learning
+https://blog.csdn.net/qq_41056224/rss/list networking
+https://ungleich.ch/u/blog/feed.xml networking
+https://tw.news.yahoo.com/rss/finance finance
+https://tw.stock.yahoo.com/rss?category=news news finance
+https://tw.news.yahoo.com/rss news
+https://news.google.com/rss/topics/CAAqIQgKIhtDQkFTRGdvSUwyMHZNRFptTXpJU0FtVnVLQUFQAQ news
+https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en news
+https://www.ithome.com/rss/ news programming
+https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml news
+https://www.ithome.com.tw/rss news
+https://www.yahoo.com/news/rss news
+https://gnn.gamer.com.tw/rss.xml news
+https://rustcc.cn/rss programming
+https://juejin.cn/rss programming
+https://blog.lxdlam.com/index.xml programming
+"query:News:tags # \"news\""
+"query:stream1:tags # \"stream1\"""
+"query:finance:tags # \"finance\"""
+"query:program:tags # \"programming\"""
+"query:network:tags # \"networking\"""
+"query:academic:tags # \"academic\"""
