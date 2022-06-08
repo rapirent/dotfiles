@@ -68,12 +68,9 @@ export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app
 
 
 # Avoid duplicates
-HISTCONTROL=ignoredups:erasedups
+#HISTCONTROL=ignoredups:erasedups
 # When the shell exits, append to the history file instead of overwriting it
-setopt histappend
-
-# After each command, append to the history file and reread it
-PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+#setopt histappend
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -92,3 +89,5 @@ setopt sharehistory
 setopt incappendhistory
 # After each command, append to the history file and reread it
 PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+export PATH=$PATH:$(go env GOPATH)/bin
+export GOPATH=$(go env GOPATH)

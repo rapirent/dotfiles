@@ -17,7 +17,8 @@ export EDITOR="nvim" # Set by `nb` • 2021年 3月21日 週日 21時28分53秒 
 
 
 
-export NB_AUTO_SYNC="${NB_AUTO_SYNC:-0}" # Set by `nb` • Wed Jul 28 16:26:50 CST 2021
-
 export MAC_PATH="/Users/tony/Library/Mobile Documents/iCloud~com~coderforart~iOS~MWeb/Documents"
+#export MAC_PATH="/Users/tony/Library/Containers/com.coderforart.MWeb3/Data/Library/Application Support/MWebLibrary"
 export NB_DIR="${NB_DIR:-${MAC_PATH}}" # Set by `nb` • Fri Jul 30 08:44:00 CST 2021
+
+export NB_AUTO_SYNC="${NB_AUTO_SYNC:-1}" # Set by `nb` • Thu Nov 18 15:20:01 CST 2021
