@@ -1,3 +1,14 @@
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+mkdir -p "$(dirname $ZINIT_HOME)"
+[[ ! -f "$ZINIT_HOME" ]] || git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 if [ -f $HOME/.path ]; then
@@ -49,18 +60,27 @@ export PATH=$PATH:/opt/gradle/gradle-7.0/bin
 # completions
 source $(pyenv root)/completions/pyenv.zsh
 
-source ~/.zinit/bin/zinit.zsh
-zinit ice wait'!0'
-#zinit load halfo/lambda-mod-zsh-theme
+# theme
+#zinit ice pick"async.zsh" src"pure.zsh"
+#zinit light sindresorhus/pure
+#export PURE_GIT_STASH_SYMBOL="✚ "
+#zstyle :prompt:pure:path color white
+#zstyle :prompt:pure:git:stash show yes
+zinit ice depth"1" # git clone depth
+zinit light romkatv/powerlevel10k
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#######
 zinit ice blockf
 zinit light zsh-users/zsh-completions
-zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-zinit light sindresorhus/pure
 zinit load zdharma/fast-syntax-highlighting
 zinit load Aloxaf/fzf-tab
-export PURE_GIT_STASH_SYMBOL="✚ "
-zstyle :prompt:pure:path color white
-zstyle :prompt:pure:git:stash show yes
+zinit load zdharma-continuum/history-search-multi-word
+#zinit light zsh-users/zsh-autosuggestions
+zinit light zdharma-continuum/fast-syntax-highlighting
+zinit light zsh-users/zsh-completions
+#snippet
+#zinit snippet https://gist.githubusercontent.com/hightemp/5071909/raw/
 
 
 
@@ -93,3 +113,14 @@ export PATH=$PATH:$(go env GOPATH)/bin
 export GOPATH=$(go env GOPATH)
 alias urlencode='python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))'
 alias urldecode='python3 -c "import urllib.parse, sys; print(urllib.parse.unquote(sys.argv[1]))"'
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
+### End of Zinit's installer chunk
+
