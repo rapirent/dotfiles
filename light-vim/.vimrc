@@ -38,3 +38,38 @@ set fileencodings=utf-8,ucs-bom,big5,cp936,gb18030,gb2312,euc-jp,euc-kr,latin1
 set synmaxcol=500
 
 nnoremap <C-p> :Explore!<CR>
+
+inoremap ( ()<Esc>i
+inoremap " ""<Esc>i
+inoremap ' ''<Esc>i
+inoremap [ []<Esc>i
+inoremap { {}<Esc>i
+inoremap {<CR> {<CR>}<Esc>ko<tab>
+inoremap {<CR> {<CR>}<Esc>ko
+filetype indent on          "indent according file format
+
+augroup files
+    autocmd!
+    autocmd FileType html,javascript setlocal shiftwidth=2 tabstop=2
+    autocmd FileType python,php,c,cpp,java setlocal expandtab shiftwidth=4 softtabstop=4
+    autocmd FileType c,cpp,java set mps+==:;
+    autocmd BufNewFile,BufFilePre,BufRead *.md setlocal noautoindent nocindent nosmartindent
+augroup END
+let mapleader = ","
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+highlight RedundantSpaces ctermbg=red guibg=red
+match RedundantSpaces /\s\+$/
+
+set nocompatible
+if version >= 600
+  filetype plugin indent on
+endif
+
+au FileType markdown setlocal foldlevel=99
+
+noremap <C-l> :tabn<CR>
+noremap <C-h> :tabp<CR>
+noremap <leader><S>e :tabnew<CR>
+noremap <leader>c :tabclose<CR>
