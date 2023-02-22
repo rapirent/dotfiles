@@ -14,7 +14,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 if [ -f $HOME/.path ]; then
     source $HOME/.path
 fi
-
 HISTSIZE=200000
 HISTFILESIZE=200000
 if [ -x /usr/bin/dircolors ]; then
@@ -60,6 +59,17 @@ export PATH=$PATH:/opt/gradle/gradle-7.0/bin
 # completions
 source $(pyenv root)/completions/pyenv.zsh
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
+### End of Zinit's installer chunk
+
 # theme
 #zinit ice pick"async.zsh" src"pure.zsh"
 #zinit light sindresorhus/pure
@@ -71,16 +81,17 @@ zinit light romkatv/powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #######
-zinit ice blockf
+zinit ice blockf atpull'zinit creinstall -q .'
 zinit light zsh-users/zsh-completions
-zinit load zdharma/fast-syntax-highlighting
-zinit load Aloxaf/fzf-tab
+
+autoload compinit
+compinit
+
+#zinit load Aloxaf/fzf-tab
 zinit load zdharma-continuum/history-search-multi-word
-#zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
+
 zinit light zsh-users/zsh-completions
-#snippet
-#zinit snippet https://gist.githubusercontent.com/hightemp/5071909/raw/
 
 
 
@@ -92,7 +103,6 @@ export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app
 # When the shell exits, append to the history file instead of overwriting it
 #setopt histappend
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH=/opt/homebrew/bin/:$PATH
 export PATH=$PATH:/opt/homebrew/Cellar/openvpn/2.5.2/sbin/
@@ -102,25 +112,19 @@ alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
 # Avoid duplicates
 # bash HISTCONTROL=ignoredups:erasedups
-setopt histignoredups
+#setopt histignoredups
 # When the shell exits, append to the history file instead of overwriting it
-setopt appendhistory
-setopt sharehistory
+#setopt appendhistory
+#setopt sharehistory
 setopt incappendhistory
+setopt HIST_IGNORE_ALL_DUPS
+setopt INC_APPEND_HISTORY
+setopt HIST_FIND_NO_DUPS
+
 # After each command, append to the history file and reread it
 PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 export PATH=$PATH:$(go env GOPATH)/bin
 export GOPATH=$(go env GOPATH)
 alias urlencode='python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))'
 alias urldecode='python3 -c "import urllib.parse, sys; print(urllib.parse.unquote(sys.argv[1]))"'
-
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
-zinit light-mode for \
-    zdharma-continuum/zinit-annex-as-monitor \
-    zdharma-continuum/zinit-annex-bin-gem-node \
-    zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-rust
-
-### End of Zinit's installer chunk
 
