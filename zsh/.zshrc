@@ -82,7 +82,7 @@ zinit light romkatv/powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #######
 zinit ice blockf atpull'zinit creinstall -q .'
-zinit light zsh-users/zsh-completions
+#zinit light zsh-users/zsh-completions
 
 autoload compinit
 compinit
@@ -92,6 +92,8 @@ zinit load zdharma-continuum/history-search-multi-word
 zinit light zdharma-continuum/fast-syntax-highlighting
 
 zinit light zsh-users/zsh-completions
+zinit light jonmosco/kube-ps1
+PROMPT='$(kube_ps1)'$PROMPT
 
 
 
@@ -127,4 +129,4 @@ export PATH=$PATH:$(go env GOPATH)/bin
 export GOPATH=$(go env GOPATH)
 alias urlencode='python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))'
 alias urldecode='python3 -c "import urllib.parse, sys; print(urllib.parse.unquote(sys.argv[1]))"'
-
+alias z='kubectl'
