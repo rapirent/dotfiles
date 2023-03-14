@@ -188,18 +188,10 @@ if version >= 600
 endif
 
 au FileType markdown setlocal foldlevel=99
-exmap unfoldall obcommand editor:unfold-all
-nmap zR :unfoldall
-
-exmap foldall obcommand editor:fold-all
-nmap zM :foldall
-
-exmap foldtoggle obcommand editor:toggle-fold
-nmap za :foldtoggle
-"let g:netrw_altv          = 1
-"let g:netrw_fastbrowse    = 2
-"let g:netrw_keepdir       = 0
-"let g:netrw_liststyle     = 2
-"let g:netrw_retmap        = 1
-"let g:netrw_silent        = 1
-"let g:netrw_special_syntax= 1
+let g:netrw_altv          = 1
+let g:netrw_fastbrowse    = 2
+let g:netrw_keepdir       = 0
+let g:netrw_liststyle     = 2
+let g:netrw_retmap        = 1
+let g:netrw_silent        = 1
+let g:netrw_special_syntax= 1
