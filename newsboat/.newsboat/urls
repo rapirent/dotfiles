@@ -104,19 +104,18 @@ https://lrita.github.io/feed.xml programming arch
 http://wulc.me/atom.xml programming machine-learning
 https://blog.csdn.net/qq_41056224/rss/list networking
 https://ungleich.ch/u/blog/feed.xml networking
-https://tw.news.yahoo.com/rss/finance finance
-https://tw.stock.yahoo.com/rss?category=news news finance
-https://tw.news.yahoo.com/rss news
-https://news.google.com/rss/topics/CAAqIQgKIhtDQkFTRGdvSUwyMHZNRFptTXpJU0FtVnVLQUFQAQ news
-https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en news
-https://www.ithome.com/rss/ news programming
 https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml news
-https://www.ithome.com.tw/rss news
-https://www.yahoo.com/news/rss news
-https://gnn.gamer.com.tw/rss.xml news
 https://rustcc.cn/rss programming
 https://juejin.cn/rss programming
 https://blog.lxdlam.com/index.xml programming
+https://www.zhangxinxu.com/wordpress/feed/
+https://feeds.packetpushers.net/PacketPushersWeeklyPodcast networking
+https://feeds.packetpushers.net/ networking
+https://blogs.vmware.com/wprss networking
+https://blogs.vmware.com/networkvirtualization/feed/ networking
+http://feeds.feedburner.com/VmwareVroomBlog performance
+https://blogs.vmware.com/vmware-taiwan/feed/ virtualize
+https://blogs.vmware.com/china/feed/ virtualize
 "query:News:tags # \"news\""
 "query:stream1:tags # \"stream1\"""
 "query:finance:tags # \"finance\"""
