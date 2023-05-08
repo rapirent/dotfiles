@@ -69,3 +69,4 @@ typings/
 
 migrations/
 .idea
+.DS_Store
