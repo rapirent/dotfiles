@@ -5,7 +5,6 @@ https://planet.mysql.com/rss20.xml programming
 https://www.reddit.com/r/mysql/.rss programming
 https://dotnetkicks.com/feeds/rss programming
 https://www.reddit.com/r/dotnet/.rss?format=xml programming
-https://www.dotnetweekly.com/feed/ programming
 https://www.reddit.com/r/cprogramming/.rss?format=xml programming
 https://www.reddit.com/r/vpn/.rss programming
 https://planet.postgresql.org/rss20.xml programming
@@ -92,7 +91,7 @@ https://www.percona.com/blog/feed/ database
 https://kevinzakka.github.io/feed.xml machine-learning
 https://www.quirksmode.org/blog/index.xml web programming
 http://feeds.dzone.com/home programming
-https://jimmysong.io/blog/index.xml networking programming
+https://jimmysong.io/blog/index.xml networking programming blog
 https://blog.csdn.net/subfate/rss/list programming
 https://blog.vjeux.com/feed web programming
 https://zxi.mytechroad.com/blog/feed/ programming algorithm
@@ -116,6 +115,7 @@ https://blogs.vmware.com/networkvirtualization/feed/ networking
 http://feeds.feedburner.com/VmwareVroomBlog performance
 https://blogs.vmware.com/vmware-taiwan/feed/ virtualize
 https://blogs.vmware.com/china/feed/ virtualize
+https://www.pugetsystems.com/all-hpc/feed/ hpc
 "query:News:tags # \"news\""
 "query:stream1:tags # \"stream1\"""
 "query:finance:tags # \"finance\"""
