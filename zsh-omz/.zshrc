@@ -99,3 +99,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias synology="/Users/tony/Library/CloudStorage/SynologyDrive-ondemand"
+alias ssho="ssh -o PubkeyAuthentication=no"
