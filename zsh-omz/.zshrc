@@ -87,7 +87,6 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -101,3 +100,21 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias synology="/Users/tony/Library/CloudStorage/SynologyDrive-ondemand"
 alias ssho="ssh -o PubkeyAuthentication=no"
+alias urlencode='python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))'
+alias urldecode='python3 -c "import urllib.parse, sys; print(urllib.parse.unquote(sys.argv[1]))"'
+alias k='kubectl'
+
+
+## Dot Module
+[[ ! -e $HOME/.api_keys ]] && echo "you should set '$HOME/.api_keys' filr for api keys"
+[[ -e $HOME/.api_keys ]] && source $HOME/.api_keys
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+## script directory
+export PATH="$HOME/script/darwin/:$PATH"
+setopt incappendhistory
+setopt HIST_IGNORE_ALL_DUPS
+setopt INC_APPEND_HISTORY
+setopt HIST_FIND_NO_DUPS

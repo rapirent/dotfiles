@@ -23,3 +23,5 @@
     dlc = diff --cached HEAD^
 	ignore = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
 
+[credential]
+	helper = manager-core
