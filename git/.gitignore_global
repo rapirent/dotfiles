@@ -67,6 +67,5 @@ typings/
 
 # End of https://www.gitignore.io/api/node
 
-migrations/
 .idea
 .DS_Store

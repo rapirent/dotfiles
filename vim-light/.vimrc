@@ -2,6 +2,7 @@ if has("unix")
     let s:uname = system("uname -s")
     if s:uname == "Darwin\n"
         let s:OS = "OSX"
+        echo "123"
         set clipboard+=unnamed  " use the clipboards of vim on win
     else
         let s:OS = "linux"
