@@ -70,3 +70,8 @@ typings/
 .idea
 .DS_Store
 .specstory/
+.cursor.md
+.knowledge.cursor/
+.knowledge.cursor/*
+.cursor.knowledge/
+.cursor.knowledge/*

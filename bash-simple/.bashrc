@@ -129,9 +129,35 @@ PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; h
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-if which pyenv-virtualenv-init > /dev/null;then
-  eval "$(pyenv virtualenv-init -)";
-fi
+#if command -v pyenv 1>/dev/null 2>&1; then
+#  eval "$(pyenv init --path)"
+#fi
+#if which pyenv-virtualenv-init > /dev/null;then
+#  eval "$(pyenv virtualenv-init -)";
+#fi
+
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path)"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
 fi
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+down-database() {
+    docker compose -f docker-compose.yml down
+    docker volume rm frigate_postgres_data
+}
+
+up-database() {
+    docker compose -f docker-compose.postgresql.yml up postgres -d
+    docker compose -f docker-compose.postgresql.yml up --force-recreate --build migrate-from-sqlite
+}
+
+
+up-system() {
+    docker compose -f docker-compose.postgresql.yml up --force-recreate --build frigate -d
+}
+
+down-system() {
+    docker compose -f docker-compose.postgresql.yml down frigate
+}
