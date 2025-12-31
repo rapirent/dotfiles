@@ -71,7 +71,12 @@ typings/
 .DS_Store
 .specstory/
 .cursor.md
+*.cursor.md
 .knowledge.cursor/
 .knowledge.cursor/*
 .cursor.knowledge/
 .cursor.knowledge/*
+.antigravity.md
+*.antigravity.md
+.antigravity.knowledge/*
+.cursorindexingignore

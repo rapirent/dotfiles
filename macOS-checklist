@@ -2,3 +2,5 @@
 - theseal/ssh-askpass/ssh-askpass
 - pyenv
 - Blackhole
+brew install --cask rectangle
+

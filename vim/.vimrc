@@ -301,7 +301,7 @@ else
 endif
 "https://qiita.com/delphinus/items/a202d0724a388f6cdbc3
 "set termguicolors
-set pb=10
+"set pb=10
 "let winid = nvim_open_win(bufnr(''), v:false, {'relative': 'cursor', 'height': 3, 'width': 10, 'row': 1, 'col': 1})
 augroup transparent-windows
   autocmd!
@@ -364,13 +364,13 @@ if version >= 600
 endif
 
 au FileType markdown setlocal foldlevel=99
-exmap unfoldall obcommand editor:unfold-all
+"exmap unfoldall obcommand editor:unfold-all
 nmap zR :unfoldall
 
-exmap foldall obcommand editor:fold-all
+"exmap foldall obcommand editor:fold-all
 nmap zM :foldall
 
-exmap foldtoggle obcommand editor:toggle-fold
+"exmap foldtoggle obcommand editor:toggle-fold
 nmap za :foldtoggle
 "let g:netrw_altv          = 1
 "let g:netrw_fastbrowse    = 2
