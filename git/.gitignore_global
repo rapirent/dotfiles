@@ -82,3 +82,4 @@ typings/
 .cursorindexingignore
 .codex.knowledge/*
 *.codex.md
+AGENTS.md
