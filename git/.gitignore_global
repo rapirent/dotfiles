@@ -80,3 +80,5 @@ typings/
 *.antigravity.md
 .antigravity.knowledge/*
 .cursorindexingignore
+.codex.knowledge/*
+*.codex.md
