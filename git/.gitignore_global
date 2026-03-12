@@ -83,3 +83,6 @@ typings/
 .codex.knowledge/*
 *.codex.md
 AGENTS.md
+*.claude-report.md
+.claude.knowledge/
+.claude.knowledge/*
