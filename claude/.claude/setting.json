@@ -6,7 +6,8 @@
       "Bash(git status)",
       "Bash(git diff *)",
       "Bash(npm run dev)",
-      "Bash(npm run test *)"
+      "Bash(npm run test *)",
+      "Bash(python3 -c *)"
     ],
     "deny": [
       "Bash(git push *)"
