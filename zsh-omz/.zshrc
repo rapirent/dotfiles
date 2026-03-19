@@ -130,3 +130,6 @@ export NVM_DIR="$HOME/.nvm"
 [[ -r $NVM_DIR/bash_completion ]] && \. $NVM_DIR/bash_completion
 export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 nvm use global-nvm
+
+# Added by Antigravity
+export PATH="/Users/tony/.antigravity/antigravity/bin:$PATH"
