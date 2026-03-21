@@ -87,3 +87,4 @@ AGENTS.md
 .claude.knowledge/
 .claude.knowledge/*
 /.claude
+/CLAUDE.md
