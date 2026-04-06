@@ -12,6 +12,7 @@ Before answering questions or making any changes, read files in these directorie
 
 - Maintain a project-level knowledge directory named `.claude.knowledge/`. Create it if it does not exist.
 - All standalone Markdown reports use the `.claude-report.md` filename suffix.
+- Filenames for all standalone Markdown reports should start with the creation date in YYYY-MM-DD- format, for example: `2026-04-06-report-name.claude-report.md`.
 
 ## Constraints
 

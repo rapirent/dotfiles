@@ -14,6 +14,7 @@
 - Also read any files with suffixes: `.antigravity.md`, `.claude-report.md`, `.codex.md`, `.cursor.md`.
 - Build and maintain a project-level knowledge directory named `.antigravity.knowledge/`. If it does not exist, create it first.
 - All standalone Markdown reports use the `.antigravity.md` filename suffix.
+- Filenames for all standalone Markdown reports should start with the creation date in YYYY-MM-DD- format, for example: `2026-04-06-report-name.antigravity.md`.
 
 ## Protected Files
 

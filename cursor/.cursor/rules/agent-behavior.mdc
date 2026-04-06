@@ -26,6 +26,7 @@ Also read any files ending with `.claude-report.md`, `.codex.md`, `.cursor.md`, 
 - If `.cursor.knowledge/` does not exist, **create it first** before storing anything.
 - All standalone Markdown reports for the project use the `.cursor.md` filename suffix.
 - Store useful findings, decisions, and context in `.cursor.knowledge/` for future reference.
+- Filenames for all standalone Markdown reports should start with the creation date in YYYY-MM-DD- format, for example: 2026-04-06-report-name.cursor.md.
 
 ## Protected Directories — Do Not Edit or Delete
 Never edit or delete files in:
