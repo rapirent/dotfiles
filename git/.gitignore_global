@@ -88,3 +88,8 @@ AGENTS.md
 .claude.knowledge/*
 /.claude
 /CLAUDE.md
+.codex/
+AGENT_PROGRESS.md
+FEATURE_STATUS.json
+DECISIONS.md
+KNOWN_ISSUES.md

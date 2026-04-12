@@ -12,6 +12,6 @@
       "Bash(git push *)"
     ]
   },
-  "defaultMode": "acceptEdits",
-  "model": "opus"
+  "model": "opus",
+  "defaultMode": "acceptEdits"
 }
