@@ -89,7 +89,8 @@ AGENTS.md
 /.claude
 /CLAUDE.md
 .codex/
-AGENT_PROGRESS.md
-FEATURE_STATUS.json
-DECISIONS.md
-KNOWN_ISSUES.md
+/AGENT_PROGRESS.md
+/FEATURE_STATUS.json
+/DECISIONS.md
+/KNOWN_ISSUES.md
+agent-shared/
