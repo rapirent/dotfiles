@@ -24,16 +24,14 @@
 - After substantial work, capture Codex-local durable facts in `.codex.knowledge/` using new dated `.codex.md` reports: environment bootstrap steps, validation commands, recurring failure modes, and stable architectural decisions.
 
 ## Shared operational files
-- For cross-agent work, use split state tracking:
-  - `agent-shared/FEATURE_STATUS.json` is the only machine-readable source of truth for feature progress.
-  - `agent-shared/AGENT_PROGRESS.md` is the short human-readable handoff for current goal, current work, blockers, recent decisions, and next step.
-  - `agent-shared/DECISIONS.md` is the append-oriented decision log.
-  - `agent-shared/KNOWN_ISSUES.md` is the durable issue log for symptoms, causes, workarounds, and fix ideas.
-- Shared operational files for this repository live in `agent-shared/`:
-  - `AGENT_PROGRESS.md`
-  - `FEATURE_STATUS.json`
-  - `DECISIONS.md`
-  - `KNOWN_ISSUES.md`
+- For cross-agent work, use split state tracking classified into two categories:
+  - **Progress memory** (Cross-session persistent memory for tracking progress)
+    - `agent-shared/FEATURE_STATUS.json` is the only machine-readable source of truth for feature progress.
+    - `agent-shared/AGENT_PROGRESS.md` is the short human-readable handoff for current goal, current work, blockers, recent decisions, and next step.
+  - **Persistent knowledge** (Durable operational facts)
+    - `agent-shared/DECISIONS.md` is the append-oriented decision log.
+    - `agent-shared/KNOWN_ISSUES.md` is the durable issue log for symptoms, causes, workarounds, and fix ideas.
+- **Template Initialization**: If `agent-shared/` directory or any files are missing in a project, initialize them using the templates provided in `.agent-shared/` (e.g., from `~/.agent-shared/` or the local `.agent-shared/` folder linked by GNU Stow).
 - JSON is for progress state. Markdown is for decisions, issues, and operator handoff. Do not duplicate feature status across multiple files if `FEATURE_STATUS.json` already carries it.
 - Before modifying any shared operational file, read its current contents and preserve existing history unless the file explicitly instructs otherwise.
 - Every modification to a shared operational file must include a signature. Use the template-defined signature fields and update them in the same change.
