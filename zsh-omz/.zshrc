@@ -133,3 +133,7 @@ nvm use global-nvm
 
 # Added by Antigravity
 export PATH="/Users/tony/.antigravity/antigravity/bin:$PATH"
+
+if [[ "$TERM_PROGRAM" == "ghostty" ]]; then
+  export TERM=xterm-256color
+fi
