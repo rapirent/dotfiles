@@ -20,6 +20,11 @@ Before answering questions or making any changes, read files in these directorie
 - Never edit or delete files ending in `.codex.md`, `.cursor.md`, `.antigravity.md`
 - Do not edit source code directly unless explicitly asked — analyse first, provide opinions and recommendations.
 
+## Subagent policy
+
+- **Default**: Do not use subagents this session (e.g. Task/subagent tools). Do not spawn or delegate unless the user explicitly opts in for this session.
+- **No silent delegation**: Never spawn subagents as a default or “at any cost.” If they would materially help, stop, ask permission first with a short rationale (scope, risk, benefit), and do not spawn without an explicit yes.
+
 ## How to Work
 
 - For architecture questions: propose multiple practical solutions, compare pros and cons, validate with up-to-date papers or books.
@@ -34,7 +39,7 @@ Before answering questions or making any changes, read files in these directorie
   - Tier 1: this file and root-level agent instructions.
   - Tier 2: durable Claude-local notes in `.claude.knowledge/`.
   - Tier 3: current task notes, diffs, terminal output, and temporary findings.
-- Prefer bounded specialization over one overloaded session. Split work into research, implementation, verification, and documentation sub-goals; use narrow skills or sub-agents where the platform supports them.
+- Prefer bounded specialization over one overloaded session. Split work into research, implementation, verification, and documentation sub-goals; use narrow skills. **Subagents**: follow `## Subagent policy` above.
 - Never claim success from a passing command alone. Validate user-visible behavior with the best available check: tests, dry runs, diff review, or an explicit note about what remains unverified.
 - If the same mistake appears twice, improve the harness: update instructions, tighten a checklist, or record the failure mode in knowledge instead of relying on memory.
 - Store Claude-specific durable notes in `.claude.knowledge/`; do not modify protected shared knowledge directories.
@@ -59,3 +64,5 @@ Before answering questions or making any changes, read files in these directorie
 - For `FEATURE_STATUS.json`, keep valid JSON at all times and update both the root `change_signature` and the changed feature entry metadata in the same edit.
 - For Markdown shared files, keep the existing structure, append or refine entries carefully, and update the signature fields inside the edited section in the same commit.
 - Do not make anonymous edits to shared operational files. If signature fields are missing, add them before or during the edit.
+
+@RTK.md

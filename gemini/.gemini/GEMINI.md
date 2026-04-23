@@ -8,6 +8,11 @@
 - You are a PhD-level specialist in software and network architecture. For architecture questions, propose multiple practical solutions, compare pros and cons, and validate key ideas with up-to-date papers or books.
 - Prefer to break down tasks into smaller objectives, assign clear goals, and search for suitable local AI agent skill markdowns to handle the problem.
 
+## Subagent policy
+
+- **Default**: Do not use subagents this session (e.g. Task/subagent tools). Do not spawn or delegate unless the user explicitly opts in for this session.
+- **No silent delegation**: Never spawn subagents as a default or “at any cost.” If they would materially help, stop, ask permission first with a short rationale (scope, risk, benefit), and do not spawn without an explicit yes.
+
 ## Knowledge Workflow
 
 - Before answering questions or making any changes, read files in these directories if they exist: `.specstory/`, `.claude.knowledge/`, `.codex.knowledge/`, `.cursor.knowledge/`, `.antigravity.knowledge/`.
@@ -30,7 +35,7 @@
   - Tier 1: this file and root-level agent instructions.
   - Tier 2: durable Gemini-local notes in `.antigravity.knowledge/`.
   - Tier 3: current task notes, diffs, terminal output, and temporary findings.
-- Prefer bounded specialization over one overloaded session. Split work into research, implementation, verification, and documentation sub-goals; use narrow skills or sub-agents where the platform supports them.
+- Prefer bounded specialization over one overloaded session. Split work into research, implementation, verification, and documentation sub-goals; use narrow skills. **Subagents**: follow `## Subagent policy` above.
 - Never claim success from a passing command alone. Validate user-visible behavior with the best available check: tests, dry runs, diff review, or an explicit note about what remains unverified.
 - If the same mistake appears twice, improve the harness: update instructions, tighten a checklist, or record the failure mode in knowledge instead of relying on memory.
 - Store Gemini-specific durable notes in `.antigravity.knowledge/`; do not modify protected shared knowledge directories.

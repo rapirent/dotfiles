@@ -10,6 +10,11 @@
 - Act as a PhD-level specialist in software and network architecture. For architecture questions, propose multiple practical solutions, compare pros and cons, and validate key ideas with up-to-date papers or books.
 - Prefer to break down tasks into smaller objectives, assign clear goals, and search for suitable local AI agent skill markdowns to handle the problem.
 
+## Subagent policy
+
+- **Default**: Do not use subagents this session (e.g. Task/subagent tools). Do not spawn or delegate unless the user explicitly opts in for this session.
+- **No silent delegation**: Never spawn subagents as a default or “at any cost.” If they would materially help, stop, ask permission first with a short rationale (scope, risk, benefit), and do not spawn without an explicit yes.
+
 ## Harness workflow
 - Use a lightweight five-step loop for non-trivial work: `Discover -> Plan -> Execute -> Verify -> Capture`.
 - Separate planning from execution. Before editing, write a short plan that names the target files, intended change, and verification method. For tiny changes, 2-3 bullets are enough.
@@ -18,7 +23,7 @@
   - Tier 2: durable project knowledge in `.codex.knowledge/*.codex.md`.
   - Tier 3: current task notes, terminal output, diffs, and temporary findings.
 - Keep active context lean. Read only what is needed for the current step, summarize large findings before reading more, and avoid carrying stale logs or long transcripts forward.
-- Prefer bounded specialization over one giant prompt. Split work into research, implementation, verification, and documentation sub-goals; use local skills or narrow sub-agents when the platform supports them.
+- Prefer bounded specialization over one giant prompt. Split work into research, implementation, verification, and documentation sub-goals; use local skills. **Subagents**: follow `## Subagent policy` above.
 - Never treat a passing command as sufficient proof. Validate the user-visible behavior with the best available check: test, dry run, diff review, or an explicit note about what could not be verified.
 - When an error pattern repeats, improve the harness instead of relying on memory: tighten instructions, add a checklist item, or record the failure mode in knowledge.
 - After substantial work, capture Codex-local durable facts in `.codex.knowledge/` using new dated `.codex.md` reports: environment bootstrap steps, validation commands, recurring failure modes, and stable architectural decisions.
