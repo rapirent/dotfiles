@@ -13,7 +13,6 @@
     ]
   },
   "model": "opus",
-  "defaultMode": "acceptEdits",
   "effortLevel": "medium",
   "defaultMode": "acceptEdits"
 }

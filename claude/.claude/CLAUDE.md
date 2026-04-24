@@ -25,6 +25,26 @@ Before answering questions or making any changes, read files in these directorie
 - **Default**: Do not use subagents this session (e.g. Task/subagent tools). Do not spawn or delegate unless the user explicitly opts in for this session.
 - **No silent delegation**: Never spawn subagents as a default or “at any cost.” If they would materially help, stop, ask permission first with a short rationale (scope, risk, benefit), and do not spawn without an explicit yes.
 
+## Complex document handling
+
+**Archive root (Claude):** `.claude.complex.document/` — create if missing.
+
+**Scope (mandatory):** Use this pipeline **only** for **`pdf`** or **`ppt` / `pptx`** with **≥10 pages** (PDF) or **≥10 slides** (PowerPoint). For `.md`, `.txt`, code, or PDF/PPT **below** that threshold—or any source that is quick to parse—**skip** this workflow; use normal read/summary instead. If counts are unknown, detect them first; when below threshold or trivial, skip.
+
+When the scope applies, do **not** one-shot summarize the whole file. Work **page by page**; on each page, split into **blocks** and label each `block_type` as one of: `text`, `table`, `chart`, `diagram`, `formula`, `code`, `image`, `footer`, `header`.
+
+Every block must carry: `doc_id`, `page_number`, `block_id`, `block_type`, `bbox`, `raw_text`, `normalized_text`, `summary`, `keywords`, `source_image`.
+
+- **Table:** output a Markdown table **and** a JSON table.
+- **Diagram:** nodes, relations (edges), caption, plus a natural-language description of the figure.
+- **Formula:** LaTeX, variable definitions, and contextual explanation.
+
+Persist under the archive root: **one subdirectory per source document**; you choose the internal structure (e.g. `pages/`, `blocks.jsonl`, `assets/`). Add a short `README.md` per document folder describing layout.
+
+**Query / retrieval:** Decide which lanes apply before answering: `text`, `table`, `diagram`, `formula`, `page_image`, `metadata`. Do **not** use only a single vector search when multiple apply.
+
+**Answers:** When using evidence from these artifacts, cite `doc_id`, `page_number`, and `block_id`.
+
 ## How to Work
 
 - For architecture questions: propose multiple practical solutions, compare pros and cons, validate with up-to-date papers or books.
