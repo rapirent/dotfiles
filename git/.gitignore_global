@@ -94,3 +94,5 @@ AGENTS.md
 /DECISIONS.md
 /KNOWN_ISSUES.md
 agent-shared/
+*.complext.document/
+*.complext.document/*
