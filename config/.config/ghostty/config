@@ -1,8 +1,0 @@
-shell-integration-features = sudo
-shell-integration = detect
-font-family = ""  
-font-family = "Maple Mono NF CN Light"
-font-synthetic-style = false
-font-size = 18
-font-feature = -calt
-font-feature = -liga
