@@ -13,6 +13,8 @@
     ]
   },
   "model": "opus",
-  "effortLevel": "medium",
-  "defaultMode": "acceptEdits"
+  "effortLevel": "high",
+  "theme": "auto",
+  "defaultMode": "acceptEdits",
+  "preferredNotifChannel": "terminal_bell"
 }
